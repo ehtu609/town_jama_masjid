@@ -11,6 +11,10 @@
 <body>
     <!-- Header Section -->
     <header>
+        <!-- Add this in header or prayer section -->
+        <div class="islamic-date">
+            <p>📅 Today: <span id="hijri-date">Loading Islamic date...</span></p>
+        </div>
         <div class="container">
             <div class="logo">
                 <h1>TOWN JAMA MASJID</h1>
@@ -28,6 +32,13 @@
             </nav>
         </div>
     </header>
+
+    <!-- Add this right after header -->
+    <div class="announcement-bar">
+        <marquee behavior="scroll" direction="left">
+            🕌 **Next Jumu'ah Prayer: 1:00 PM** | 📚 **Quran Classes Every Sunday 4-6 PM** | 🌙 **Eid ul Fitr: February 28, 2026**
+        </marquee>
+    </div>
     <!-- Hero Carousel Section -->
     <section id="home" class="hero">
         <div class="carousel">
@@ -116,6 +127,18 @@
             </div>
         </div>
     </section>
+
+    <!-- Add this after prayer times section -->
+    <section class="prayer-calculator">
+        <div class="container">
+            <h2>Prayer Times Calculator</h2>
+            <div class="calculator-form">
+                <input type="date" id="prayer-date" class="date-input">
+                <button onclick="calculatePrayerTimes()" class="calc-btn">Get Prayer Times</button>
+            </div>
+            <div id="calculated-times" class="calculated-times"></div>
+        </div>
+    </section>
     
     <!-- About Section -->
     <section id="about" class="about">
@@ -155,6 +178,76 @@
                     <i class="fas fa-hands-helping"></i>
                     <h3>Community Support</h3>
                     <p>Social and community services</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>Rahiman Nagar, Jaigaon, West Bengal 736182</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 XXXXX XXXXX</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@townjamamasjid.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Office Hours</h4>
+                            <p>Monday - Sunday: 8:00 AM - 8:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Message</h3>
+                    <form id="masjid-contact-form">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Your Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <select name="subject" required>
+                                <option value="">Select Subject</option>
+                                <option value="prayer">Prayer Timing Query</option>
+                                <option value="event">Event Information</option>
+                                <option value="donation">Donation Inquiry</option>
+                                <option value="education">Islamic Classes</option>
+                                <option value="marriage">Marriage Registration</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
                 </div>
             </div>
         </div>
