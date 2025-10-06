@@ -260,6 +260,20 @@ nav ul li a:hover {
     font-weight: bold;
 }
 
+.prayer-item p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+.prayer-item p:first-of-type {
+    color: #2c5f2d;
+    font-weight: bold;
+}
+
+.prayer-item p:last-of-type {
+    color: #555;
+}
+
 /* About Section */
 .about {
     padding: 4rem 0;
@@ -487,3 +501,4 @@ footer {
     color: #fff;
     transform: translateY(-3px);
 }
+
