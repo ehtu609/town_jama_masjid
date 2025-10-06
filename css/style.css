@@ -510,5 +510,10 @@ footer {
     transform: translateY(-3px);
 }
 
+<div class="prayer-item" style="background: red; padding: 20px;">
+    TEST - If red appears, CSS is working
+</div>
+
+
 
 
