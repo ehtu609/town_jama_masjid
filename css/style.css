@@ -216,7 +216,7 @@ nav ul li a:hover {
 }
 
 /* Prayer Times Section */
-.prayer-times {
+/* .prayer-times {
     background: linear-gradient(135deg, #2c5f2d, #1e3f1f);
     color: white;
     padding: 4rem 0;
@@ -226,52 +226,60 @@ nav ul li a:hover {
 .prayer-times h2 {
     margin-bottom: 2rem;
     font-size: 2.5rem;
-}
+} */
 
 .prayer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1.5rem;
-    max-width: 800px;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
 }
 
 .prayer-item {
-    background: rgba(255,255,255,0.1);
-    padding: 2rem 1rem;
+    background: #fff;
+    padding: 20px 15px;
     border-radius: 10px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.2);
-    transition: transform 0.3s;
-}
-
-.prayer-item:hover {
-    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    min-width: 150px;
+    flex: 1;
 }
 
 .prayer-item h3 {
+    color: #2c5f2d;
+    margin-bottom: 15px;
     font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-    color: #ffd700;
 }
 
-.prayer-item p {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.prayer-item p {
-    margin: 5px 0;
-    font-size: 0.9rem;
-}
-
-.prayer-item p:first-of-type {
+.azaan-time {
     color: #2c5f2d;
     font-weight: bold;
+    font-size: 1rem;
+    margin: 8px 0;
 }
 
-.prayer-item p:last-of-type {
+.jamaat-time {
     color: #555;
+    font-size: 1rem;
+    margin: 8px 0;
+}
+
+.friday-timing {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.friday-item {
+    min-width: 250px;
+    background: #f8f9fa;
+    border: 2px solid #2c5f2d;
+}
+
+.friday-item h3 {
+    color: #2c5f2d;
+    font-size: 1.2rem;
 }
 
 /* About Section */
@@ -501,4 +509,5 @@ footer {
     color: #fff;
     transform: translateY(-3px);
 }
+
 
