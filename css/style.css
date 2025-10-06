@@ -216,7 +216,7 @@ nav ul li a:hover {
 }
 
 /* Prayer Times Section */
-/* .prayer-times {
+.prayer-times {
     background: linear-gradient(135deg, #2c5f2d, #1e3f1f);
     color: white;
     padding: 4rem 0;
@@ -226,7 +226,7 @@ nav ul li a:hover {
 .prayer-times h2 {
     margin-bottom: 2rem;
     font-size: 2.5rem;
-} */
+}
 
 .prayer-grid {
     display: flex;
@@ -509,5 +509,6 @@ footer {
     color: #fff;
     transform: translateY(-3px);
 }
+
 
 
