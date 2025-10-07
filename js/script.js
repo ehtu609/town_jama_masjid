@@ -176,6 +176,50 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+    // Islamic Date Calculator
+function updateIslamicDate() {
+    const today = new Date();
+    
+    // Update Gregorian date
+    const gregorianOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const gregorianDate = today.toLocaleDateString('en-IN', gregorianOptions);
+    document.getElementById('gregorian-date').textContent = gregorianDate;
+    
+    // Calculate approximate Hijri date (simplified version)
+    const hijriDate = calculateHijriDate(today);
+    document.getElementById('hijri-date').textContent = hijriDate;
+}
+
+function calculateHijriDate(gregorianDate) {
+    // Simple approximation - for accurate dates, we'll use an API later
+    const hijriMonths = ['Muharram', 'Safar', 'Rabi al-Awwal', 'Rabi al-Thani', 
+                        'Jumada al-Awwal', 'Jumada al-Thani', 'Rajab', 'Sha\'ban', 
+                        'Ramadan', 'Shawwal', 'Dhu al-Qi\'dah', 'Dhu al-Hijjah'];
+    
+    // This is a very simplified calculation
+    // In production, we'd use a proper Hijri calendar API
+    const startHijri = new Date(2023, 6, 19); // Approximate start of 1445 AH
+    const diffTime = Math.abs(gregorianDate - startHijri);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    const hijriDay = (diffDays % 29) + 1;
+    const hijriMonthIndex = Math.floor((diffDays / 29) % 12);
+    const hijriYear = 1445 + Math.floor(diffDays / 354);
+    
+    return `${hijriDay} ${hijriMonths[hijriMonthIndex]} ${hijriYear} AH`;
+}
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    updateIslamicDate();
+});
+
+// Update date at midnight
+setInterval(function() {
+    const now = new Date();
+    if (now.getHours() === 0 && now.getMinutes() === 0) {
+        updateIslamicDate();
+    }
+}, 60000); // Check every minute
 
     // Update current date in prayer times
     const today = new Date();
@@ -183,3 +227,4 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.prayer-times h2').innerHTML = `Today's Prayer Times<br><small>${today.toLocaleDateString('en-US', options)}</small>`;
 
 });
+
