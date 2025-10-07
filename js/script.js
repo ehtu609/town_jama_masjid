@@ -106,13 +106,6 @@ setInterval(() => {
     showSlide(currentSlide + 1);
 }, 5000);
 
-// Prayer Calculator (Simplified)
-function calculatePrayerTimes() {
-    const dateInput = document.getElementById('prayer-date').value;
-    if (!dateInput) {
-        alert('Please select a date');
-        return;
-    }
     
     const calculatedDiv = document.getElementById('calculated-times');
     calculatedDiv.innerHTML = `
@@ -183,3 +176,4 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.prayer-times h2').innerHTML = `Today's Prayer Times<br><small>${today.toLocaleDateString('en-US', options)}</small>`;
 
 });
+
