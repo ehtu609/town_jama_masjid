@@ -1,359 +1,412 @@
+/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
+    background-color: #f8f9fa;
     color: #333;
-    overflow-x: hidden;
+    line-height: 1.6;
+    padding-top: 40px;
 }
 
 .container {
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 
 /* Header Styles */
 header {
-    background: #2c5f2d;
+    background: linear-gradient(135deg, #0d5e3e 0%, #1a936f 100%);
     color: white;
-    padding: 1rem 0;
-    position: fixed;
-    width: 100%;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .logo h1 {
     font-size: 1.8rem;
-    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.logo p {
+    font-size: 0.9rem;
+    opacity: 0.9;
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin-left: 20px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s;
-    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
     border-radius: 4px;
 }
 
 nav ul li a:hover {
-    color: #ffd700;
-    background: rgba(255,255,255,0.1);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Hero Carousel - FIXED */
-.hero {
-    margin-top: 80px;
-    position: relative;
-}
-
-.carousel {
-    position: relative;
-    width: 100%;
-    height: 70vh;
-    min-height: 500px;
+/* Announcement Banner */
+.announcement-bar {
+    background: linear-gradient(90deg, #1a936f, #0d5e3e);
+    color: white;
+    padding: 10px 0;
     overflow: hidden;
+    position: relative;
+}
+
+.announcement-content {
+    display: flex;
+    justify-content: space-around;
+    animation: scrollAnnouncement 20s linear infinite;
+    white-space: nowrap;
+}
+
+.announcement-item {
+    padding: 0 20px;
+    font-size: 0.95rem;
+}
+
+@keyframes scrollAnnouncement {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Hero Carousel */
+.hero {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    margin-bottom: 30px;
 }
 
 .carousel-slides {
-    position: relative;
-    width: 100%;
+    display: flex;
+    transition: transform 0.5s ease;
     height: 100%;
 }
 
 .carousel-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.8s ease-in-out;
-}
-
-.carousel-slide.active {
-    opacity: 1;
+    min-width: 100%;
+    position: relative;
 }
 
 .carousel-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
 }
 
 .carousel-content {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
     color: white;
-    z-index: 2;
-    background: rgba(0,0,0,0.6);
-    padding: 2rem;
-    border-radius: 10px;
-    max-width: 80%;
+    padding: 30px;
+    text-align: center;
 }
 
 .carousel-content h2 {
     font-size: 2.5rem;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 10px;
 }
 
 .carousel-content p {
     font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
 }
 
 .cta-button {
-    background: #ffd700;
-    color: #333;
-    padding: 12px 30px;
+    background: #1a936f;
+    color: white;
     border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
     border-radius: 5px;
-    font-size: 1.1rem;
-    font-weight: bold;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: background 0.3s ease;
 }
 
 .cta-button:hover {
-    background: #ffed4a;
-    transform: translateY(-2px);
+    background: #0d5e3e;
 }
 
-/* Carousel Overlay */
-.carousel-slide::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.3);
-    z-index: 1;
-}
-
-/* Carousel Controls */
 .carousel-control {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255,255,255,0.2);
-    border: none;
+    background: rgba(0, 0, 0, 0.5);
     color: white;
+    border: none;
     font-size: 2rem;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    padding: 10px 15px;
     cursor: pointer;
-    z-index: 3;
-    transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.carousel-control:hover {
-    background: rgba(255,255,255,0.4);
-    transform: translateY(-50%) scale(1.1);
+    z-index: 10;
 }
 
 .carousel-control.prev {
-    left: 20px;
+    left: 10px;
 }
 
 .carousel-control.next {
-    right: 20px;
+    right: 10px;
 }
 
-/* Carousel Indicators */
 .carousel-indicators {
     position: absolute;
     bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    right: 0;
     display: flex;
+    justify-content: center;
     gap: 10px;
-    z-index: 3;
 }
 
 .indicator {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.5);
+    background: rgba(255, 255, 255, 0.5);
     cursor: pointer;
-    transition: all 0.3s;
-    border: 2px solid transparent;
 }
 
 .indicator.active {
     background: white;
-    transform: scale(1.2);
+}
+
+/* Islamic Date Widget */
+.islamic-date-widget {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.islamic-date {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+}
+
+.islamic-date .icon {
+    font-size: 1.5rem;
+}
+
+.gregorian-date {
+    font-size: 1rem;
+    color: #666;
 }
 
 /* Prayer Times Section */
 .prayer-times {
-    background: linear-gradient(135deg, #2c5f2d, #1e3f1f);
-    color: white;
-    padding: 4rem 0;
-    text-align: center;
+    background: white;
+    padding: 50px 0;
+    margin: 30px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .prayer-times h2 {
-    margin-bottom: 2rem;
-    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #0d5e3e;
+    font-size: 2rem;
 }
 
 .prayer-grid {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
     margin-bottom: 30px;
 }
 
 .prayer-item {
-    background: #fff;
-    padding: 20px 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
     text-align: center;
-    min-width: 150px;
-    flex: 1;
+    border-left: 4px solid #1a936f;
+    transition: transform 0.3s ease;
+}
+
+.prayer-item:hover {
+    transform: translateY(-5px);
 }
 
 .prayer-item h3 {
-    color: #2c5f2d;
-    margin-bottom: 15px;
-    font-size: 1.3rem;
+    color: #0d5e3e;
+    margin-bottom: 10px;
+}
+
+.prayer-item p {
+    margin: 5px 0;
 }
 
 .azaan-time {
-    color: #2c5f2d;
-    font-weight: bold;
-    font-size: 1rem;
-    margin: 8px 0;
+    color: #1a936f;
+    font-weight: 500;
 }
 
 .jamaat-time {
-    color: #555;
-    font-size: 1rem;
-    margin: 8px 0;
+    color: #0d5e3e;
+    font-weight: 600;
 }
 
 .friday-timing {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .friday-item {
-    min-width: 250px;
-    background: #f8f9fa;
-    border: 2px solid #2c5f2d;
+    background: linear-gradient(135deg, #1a936f, #0d5e3e);
+    color: white;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
-.friday-item h3 {
-    color: #2c5f2d;
-    font-size: 1.2rem;
+.friday-item h3, .friday-item p {
+    color: white;
+}
+
+/* Prayer Calculator */
+.prayer-calculator {
+    background: white;
+    padding: 40px 0;
+    margin: 30px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.prayer-calculator h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0d5e3e;
+}
+
+.calculator-form {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.date-input, .calc-btn {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.calc-btn {
+    background: #1a936f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.calc-btn:hover {
+    background: #0d5e3e;
+}
+
+.calculated-times {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 /* About Section */
 .about {
-    padding: 4rem 0;
-    background: #f8f9fa;
+    padding: 60px 0;
+    background: white;
 }
 
 .about h2 {
     text-align: center;
-    margin-bottom: 3rem;
-    color: #2c5f2d;
-    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #0d5e3e;
+    font-size: 2rem;
 }
 
 .about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 40px;
     align-items: center;
 }
 
-.about-text h3 {
-    color: #2c5f2d;
-    margin-bottom: 1rem;
-    font-size: 1.8rem;
-}
-
 .about-text p {
-    margin-bottom: 1rem;
+    margin-bottom: 20px;
     font-size: 1.1rem;
     line-height: 1.8;
 }
 
-.about-image {
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
 .about-image img {
     width: 100%;
-    height: 400px;
-    object-fit: cover;
-    display: block;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Services Section */
 .services {
-    padding: 4rem 0;
-    background: white;
+    padding: 60px 0;
+    background: #f8f9fa;
 }
 
 .services h2 {
     text-align: center;
-    margin-bottom: 3rem;
-    color: #2c5f2d;
-    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #0d5e3e;
+    font-size: 2rem;
 }
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
 }
 
 .service-item {
     background: white;
-    padding: 2.5rem;
-    text-align: center;
+    padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-    border: 1px solid #e9ecef;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
 }
 
 .service-item:hover {
@@ -362,89 +415,189 @@ nav ul li a:hover {
 
 .service-item i {
     font-size: 3rem;
-    color: #2c5f2d;
-    margin-bottom: 1.5rem;
+    color: #1a936f;
+    margin-bottom: 20px;
 }
 
 .service-item h3 {
-    color: #2c5f2d;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #0d5e3e;
 }
 
-.service-item p {
-    color: #666;
-    line-height: 1.6;
+/* Contact Section */
+.contact {
+    padding: 60px 0;
+    background: white;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #0d5e3e;
+    font-size: 2rem;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.contact-info h3, .map-container h3, .contact-form h3 {
+    margin-bottom: 20px;
+    color: #0d5e3e;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.contact-item i {
+    font-size: 1.2rem;
+    color: #1a936f;
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+.contact-item h4 {
+    margin-bottom: 5px;
+    color: #0d5e3e;
+}
+
+.map-container iframe {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+    grid-column: 1 / -1;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.submit-btn {
+    background: #1a936f;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.submit-btn:hover {
+    background: #0d5e3e;
 }
 
 /* Footer */
 footer {
-    background: #1a1a1a;
+    background: #0d5e3e;
     color: white;
-    padding: 3rem 0 1rem;
+    padding: 40px 0 20px;
 }
 
 .footer-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
-    margin-bottom: 2rem;
+    gap: 40px;
+    margin-bottom: 30px;
 }
 
 .footer-section h3 {
-    color: #ffd700;
-    margin-bottom: 1.5rem;
+    margin-bottom: 20px;
     font-size: 1.3rem;
 }
 
 .footer-section p, .footer-section li {
-    margin-bottom: 0.8rem;
-    color: #ccc;
-}
-
-.footer-section i {
-    color: #ffd700;
-    margin-right: 10px;
-    width: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .footer-section ul {
     list-style: none;
 }
 
-.footer-section ul li a {
-    color: #ccc;
+.footer-section a {
+    color: white;
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
-.footer-section ul li a:hover {
-    color: #ffd700;
+.footer-section a:hover {
+    color: #a8e6cf;
 }
 
-.footer-bottom {
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: #1a936f;
+    transform: translateY(-3px);
+}
+
+/* Under Development Banner */
+.dev-banner {
+    background: #ffd700;
+    color: #333;
+    padding: 10px;
     text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid #333;
-    color: #999;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    font-weight: bold;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     header .container {
         flex-direction: column;
-        gap: 1rem;
+        text-align: center;
     }
     
     nav ul {
-        flex-wrap: wrap;
+        margin-top: 15px;
         justify-content: center;
-        gap: 1rem;
     }
     
-    .carousel {
-        height: 50vh;
-        min-height: 400px;
+    nav ul li {
+        margin: 5px 10px;
+    }
+    
+    .hero {
+        height: 400px;
     }
     
     .carousel-content h2 {
@@ -455,18 +608,34 @@ footer {
         font-size: 1rem;
     }
     
-    .about-content {
+    .islamic-date-widget {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .about-content, .contact-content {
         grid-template-columns: 1fr;
     }
     
-    .prayer-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .calculator-form {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .date-input, .calc-btn {
+        width: 100%;
+        max-width: 300px;
     }
 }
 
 @media (max-width: 480px) {
+    .hero {
+        height: 300px;
+    }
+    
     .carousel-content {
-        padding: 1rem;
+        padding: 15px;
     }
     
     .carousel-content h2 {
@@ -480,265 +649,4 @@ footer {
     .services-grid {
         grid-template-columns: 1fr;
     }
-
 }
-
-/* Social Media Links Styles */
-.social-links {
-    margin-top: 20px;
-    display: flex;
-    gap: 15px;
-}
-
-.social-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: #fff;
-    color: #2c5f2d;
-    border-radius: 50%;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 1.2rem;
-}
-
-.social-icon:hover {
-    background: #2c5f2d;
-    color: #fff;
-    transform: translateY(-3px);
-}
-
-<div class="prayer-item" style="background: red; padding: 20px;">
-    TEST - If red appears, CSS is working
-</div>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background: #f8f9fa;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Header Styles */
-header {
-    background: linear-gradient(135deg, #0d5e0d, #1a7c1a);
-    color: white;
-    padding: 1rem 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo h1 {
-    font-size: 1.8rem;
-    margin-bottom: 0.2rem;
-}
-
-/* Contact Section Fix */
-.contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.contact-info, .map-container, .contact-form {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.contact-item {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 1.5rem;
-}
-
-.contact-item i {
-    font-size: 1.2rem;
-    color: #0d5e0d;
-    margin-right: 1rem;
-    margin-top: 0.2rem;
-}
-
-/* Map Styles */
-.map-placeholder {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    height: 300px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-}
-
-.map-content i {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.map-link {
-    display: inline-block;
-    background: white;
-    color: #333;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    text-decoration: none;
-    margin-top: 1rem;
-}
-
-.contact {
-    border: 3px solid red !important; /* Temporary to see if it exists */
-    background: yellow !important; /* Temporary */
-}
-/* Form Styles */
-.form-group {
-    margin-bottom: 1rem;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.submit-btn {
-    background: linear-gradient(135deg, #0d5e0d, #1a7c1a);
-    color: white;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    width: 100%;
-}
-
-/* Prayer Times */
-/* .prayer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin: 2rem 0;
-}
-
-.prayer-item {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-} */
-
-/* Add responsive design */
-@media (max-width: 768px) {
-    .contact-content {
-        grid-template-columns: 1fr;
-    }
-    
-    nav ul {
-        flex-direction: column;
-    }
-}
-
-/* Announcement Bar Styles */
-.announcement-bar {
-    background: linear-gradient(135deg, #2a7221, #1e5c17);
-    color: white;
-    padding: 0.5rem 0;
-    border-bottom: 2px solid #fff;
-    overflow: hidden;
-}
-
-.announcement-content {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    animation: scrollAnnouncements 20s linear infinite;
-}
-
-.announcement-item {
-    white-space: nowrap;
-    padding: 0 2rem;
-    font-size: 0.9rem;
-}
-
-/* Animation for scrolling effect */
-@keyframes scrollAnnouncements {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    .announcement-content {
-        animation-duration: 25s;
-    }
-    
-    .announcement-item {
-        padding: 0 1rem;
-        font-size: 0.8rem;
-    }
-}
-
-/* Islamic Date Widget Styles */
-.islamic-date-widget {
-    background: #f8f9fa;
-    border: 1px solid #e9ecef;
-    border-radius: 8px;
-    padding: 1rem;
-    margin: 1rem 0;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.islamic-date {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    color: #2a7221;
-}
-
-.gregorian-date {
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.islamic-date .icon {
-    margin-right: 0.5rem;
-}
-
-.islamic-date .label {
-    font-weight: bold;
-}
-
-.date {
-    font-family: 'Times New Roman', serif;
-}
-
-
-
-
-
-
