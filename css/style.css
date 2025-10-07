@@ -606,6 +606,10 @@ header {
     margin-top: 1rem;
 }
 
+.contact {
+    border: 3px solid red !important; /* Temporary to see if it exists */
+    background: yellow !important; /* Temporary */
+}
 /* Form Styles */
 .form-group {
     margin-bottom: 1rem;
@@ -633,7 +637,7 @@ header {
 }
 
 /* Prayer Times */
-.prayer-grid {
+/* .prayer-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
@@ -646,7 +650,7 @@ header {
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-}
+} */
 
 /* Add responsive design */
 @media (max-width: 768px) {
@@ -658,6 +662,7 @@ header {
         flex-direction: column;
     }
 }
+
 
 
 
