@@ -663,6 +663,46 @@ header {
     }
 }
 
+/* Announcement Bar Styles */
+.announcement-bar {
+    background: linear-gradient(135deg, #2a7221, #1e5c17);
+    color: white;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid #fff;
+    overflow: hidden;
+}
+
+.announcement-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    animation: scrollAnnouncements 20s linear infinite;
+}
+
+.announcement-item {
+    white-space: nowrap;
+    padding: 0 2rem;
+    font-size: 0.9rem;
+}
+
+/* Animation for scrolling effect */
+@keyframes scrollAnnouncements {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .announcement-content {
+        animation-duration: 25s;
+    }
+    
+    .announcement-item {
+        padding: 0 1rem;
+        font-size: 0.8rem;
+    }
+}
+
 
 
 
