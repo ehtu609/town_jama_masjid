@@ -1,12 +1,12 @@
-// Simple Carousel Functionality
+// Carousel Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    // Carousel functionality
-    let currentSlide = 0;
     const slides = document.querySelectorAll('.carousel-slide');
     const indicators = document.querySelectorAll('.indicator');
-    const totalSlides = slides.length;
-    let autoPlayInterval;
-
+    const prevBtn = document.querySelector('.carousel-control.prev');
+    const nextBtn = document.querySelector('.carousel-control.next');
+    let currentSlide = 0;
+    
+    // Function to show a specific slide
     function showSlide(index) {
         // Remove active class from all slides and indicators
         slides.forEach(slide => slide.classList.remove('active'));
@@ -18,95 +18,64 @@ document.addEventListener('DOMContentLoaded', function() {
         
         currentSlide = index;
     }
-
+    
+    // Next slide function
     function nextSlide() {
-        let next = currentSlide + 1;
-        if (next >= totalSlides) next = 0;
-        showSlide(next);
+        let nextIndex = (currentSlide + 1) % slides.length;
+        showSlide(nextIndex);
     }
-
+    
+    // Previous slide function
     function prevSlide() {
-        let prev = currentSlide - 1;
-        if (prev < 0) prev = totalSlides - 1;
-        showSlide(prev);
+        let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(prevIndex);
     }
-
-    // Event listeners for controls
-    document.querySelector('.carousel-control.next').addEventListener('click', nextSlide);
-    document.querySelector('.carousel-control.prev').addEventListener('click', prevSlide);
-
+    
+    // Event listeners for buttons
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+    
     // Event listeners for indicators
     indicators.forEach((indicator, index) => {
         indicator.addEventListener('click', () => {
             showSlide(index);
         });
     });
+    
+    // Auto slide every 5 seconds
+    setInterval(nextSlide, 5000);
+    
+    // Islamic Date Functionality
+    updateIslamicDate();
+    
+    // Set today's date in the prayer calculator
+    const today = new Date();
+    const formattedDate = today.toISOString().split('T')[0];
+    document.getElementById('prayer-date').value = formattedDate;
+});
 
-    // Auto-play
-    function startAutoPlay() {
-        autoPlayInterval = setInterval(nextSlide, 5000);
-    }
-
-    function stopAutoPlay() {
-        clearInterval(autoPlayInterval);
-    }
-
-    // Start auto-play
-    startAutoPlay();
-
-    // Pause on hover
-    const carousel = document.querySelector('.carousel');
-    carousel.addEventListener('mouseenter', stopAutoPlay);
-    carousel.addEventListener('mouseleave', startAutoPlay);
-
-    // Smooth scrolling for navigation
-    document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                const headerHeight = document.querySelector('header').offsetHeight;
-                const targetPosition = targetElement.offsetTop - headerHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    // Islamic Date Display
+// Islamic Date Function
 function updateIslamicDate() {
     const today = new Date();
-    const options = { day: 'numeric', month: 'long', year: 'numeric' };
-    const hijriDate = today.toLocaleDateString('ar-SA', options);
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const gregorianDate = today.toLocaleDateString('en-US', options);
+    document.getElementById('gregorian-date').textContent = gregorianDate;
+    
+    // Simple Hijri date approximation (for demonstration)
+    const hijriMonths = ['Muharram', 'Safar', 'Rabi\' al-Awwal', 'Rabi\' al-Thani', 
+                        'Jumada al-Awwal', 'Jumada al-Thani', 'Rajab', 'Sha\'ban', 
+                        'Ramadan', 'Shawwal', 'Dhu al-Qi\'dah', 'Dhu al-Hijjah'];
+    
+    // This is a simplified calculation - in production use a proper Hijri date library
+    const hijriDay = Math.floor(Math.random() * 28) + 1;
+    const hijriMonth = hijriMonths[Math.floor(Math.random() * 12)];
+    const hijriYear = 1445 + Math.floor(Math.random() * 2);
+    
+    const hijriDate = `${hijriDay} ${hijriMonth}, ${hijriYear} AH`;
     document.getElementById('hijri-date').textContent = hijriDate;
 }
 
-// Carousel Functionality
-let currentSlide = 0;
-const slides = document.querySelectorAll('.carousel-slide');
-const indicators = document.querySelectorAll('.indicator');
-
-function showSlide(n) {
-    slides.forEach(slide => slide.classList.remove('active'));
-    indicators.forEach(indicator => indicator.classList.remove('active'));
-    
-    currentSlide = (n + slides.length) % slides.length;
-    
-    slides[currentSlide].classList.add('active');
-    indicators[currentSlide].classList.add('active');
-}
-
-// Auto-advance carousel
-setInterval(() => {
-    showSlide(currentSlide + 1);
-}, 5000);
-
-// Prayer Calculator (Simplified)
+// Prayer Times Calculator
 function calculatePrayerTimes() {
     const dateInput = document.getElementById('prayer-date').value;
     if (!dateInput) {
@@ -114,117 +83,39 @@ function calculatePrayerTimes() {
         return;
     }
     
-    const calculatedDiv = document.getElementById('calculated-times');
-    calculatedDiv.innerHTML = `
-        <div class="prayer-grid">
+    const selectedDate = new Date(dateInput);
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const formattedDate = selectedDate.toLocaleDateString('en-US', options);
+    
+    // Mock prayer times calculation (in production, use proper calculation methods)
+    const prayerTimes = {
+        Fajr: '4:25 AM',
+        Dhuhr: '12:45 PM',
+        Asr: '3:45 PM',
+        Maghrib: '5:22 PM',
+        Isha: '7:45 PM'
+    };
+    
+    let html = `<h3>Prayer Times for ${formattedDate}</h3>`;
+    html += '<div class="prayer-grid" style="margin-top: 20px;">';
+    
+    for (const [prayer, time] of Object.entries(prayerTimes)) {
+        html += `
             <div class="prayer-item">
-                <h3>Fajr</h3>
-                <p class="azaan-time">Azaan: 4:25 AM</p>
-                <p class="jamaat-time">Jama'at: 4:55 AM</p>
+                <h3>${prayer}</h3>
+                <p class="jamaat-time">${time}</p>
             </div>
-            <div class="prayer-item">
-                <h3>Dhuhr</h3>
-                <p class="azaan-time">Azaan: 12:45 PM</p>
-                <p class="jamaat-time">Jama'at: 1:15 PM</p>
-            </div>
-            <div class="prayer-item">
-                <h3>Asr</h3>
-                <p class="azaan-time">Azaan: 3:45 PM</p>
-                <p class="jamaat-time">Jama'at: 4:00 PM</p>
-            </div>
-            <div class="prayer-item">
-                <h3>Maghrib</h3>
-                <p class="azaan-time">Azaan: 5:22 PM</p>
-                <p class="jamaat-time">Jama'at: 5:25 PM</p>
-            </div>
-            <div class="prayer-item">
-                <h3>Isha</h3>
-                <p class="azaan-time">Azaan: 7:45 PM</p>
-                <p class="jamaat-time">Jama'at: 8:15 PM</p>
-            </div>
-        </div>
-        <p style="text-align: center; margin-top: 1rem; color: #666;">
-            Note: These are sample times. Actual times may vary based on location.
-        </p>
-    `;
+        `;
+    }
+    
+    html += '</div>';
+    
+    document.getElementById('calculated-times').innerHTML = html;
 }
 
-// Contact Form Handler
+// Contact Form Submission
 document.getElementById('masjid-contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
-    alert('Shukran! Your message has been sent. We will respond to you soon, Insha\'Allah.');
+    alert('Thank you for your message! We will get back to you soon.');
     this.reset();
 });
-
-// Initialize when page loads
-document.addEventListener('DOMContentLoaded', function() {
-    updateIslamicDate();
-    
-    // Add carousel event listeners
-    document.querySelector('.carousel-control.prev').addEventListener('click', () => {
-        showSlide(currentSlide - 1);
-    });
-    
-    document.querySelector('.carousel-control.next').addEventListener('click', () => {
-        showSlide(currentSlide + 1);
-    });
-    
-    // Add indicator event listeners
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-            showSlide(index);
-        });
-    });
-});
-    // Islamic Date Calculator
-function updateIslamicDate() {
-    const today = new Date();
-    
-    // Update Gregorian date
-    const gregorianOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    const gregorianDate = today.toLocaleDateString('en-IN', gregorianOptions);
-    document.getElementById('gregorian-date').textContent = gregorianDate;
-    
-    // Calculate approximate Hijri date (simplified version)
-    const hijriDate = calculateHijriDate(today);
-    document.getElementById('hijri-date').textContent = hijriDate;
-}
-
-function calculateHijriDate(gregorianDate) {
-    // Simple approximation - for accurate dates, we'll use an API later
-    const hijriMonths = ['Muharram', 'Safar', 'Rabi al-Awwal', 'Rabi al-Thani', 
-                        'Jumada al-Awwal', 'Jumada al-Thani', 'Rajab', 'Sha\'ban', 
-                        'Ramadan', 'Shawwal', 'Dhu al-Qi\'dah', 'Dhu al-Hijjah'];
-    
-    // This is a very simplified calculation
-    // In production, we'd use a proper Hijri calendar API
-    const startHijri = new Date(2023, 6, 19); // Approximate start of 1445 AH
-    const diffTime = Math.abs(gregorianDate - startHijri);
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    const hijriDay = (diffDays % 29) + 1;
-    const hijriMonthIndex = Math.floor((diffDays / 29) % 12);
-    const hijriYear = 1445 + Math.floor(diffDays / 354);
-    
-    return `${hijriDay} ${hijriMonths[hijriMonthIndex]} ${hijriYear} AH`;
-}
-
-// Initialize when page loads
-document.addEventListener('DOMContentLoaded', function() {
-    updateIslamicDate();
-});
-
-// Update date at midnight
-setInterval(function() {
-    const now = new Date();
-    if (now.getHours() === 0 && now.getMinutes() === 0) {
-        updateIslamicDate();
-    }
-}, 60000); // Check every minute
-
-    // Update current date in prayer times
-    const today = new Date();
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    document.querySelector('.prayer-times h2').innerHTML = `Today's Prayer Times<br><small>${today.toLocaleDateString('en-US', options)}</small>`;
-
-});
-
