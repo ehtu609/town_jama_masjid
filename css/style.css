@@ -703,6 +703,40 @@ header {
     }
 }
 
+/* Islamic Date Widget Styles */
+.islamic-date-widget {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.islamic-date {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #2a7221;
+}
+
+.gregorian-date {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.islamic-date .icon {
+    margin-right: 0.5rem;
+}
+
+.islamic-date .label {
+    font-weight: bold;
+}
+
+.date {
+    font-family: 'Times New Roman', serif;
+}
+
 
 
 
