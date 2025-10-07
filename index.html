@@ -33,12 +33,15 @@
         </div>
     </header>
 
-    <!-- Add this right after header -->
+    <!-- Announcement Banner -->
     <div class="announcement-bar">
-        <marquee behavior="scroll" direction="left">
-            🕌 **Next Jumu'ah Prayer: 1:00 PM** | 📚 **Quran Classes Every Sunday 4-6 PM** | 🌙 **Eid ul Fitr: February 28, 2026**
-        </marquee>
+        <div class="announcement-content">
+            <div class="announcement-item">🕌 <strong>Next Jumu'ah Prayer:</strong> 1:00 PM</div>
+            <div class="announcement-item">📚 <strong>Quran Classes:</strong> Every Sunday 4-6 PM</div>
+            <div class="announcement-item">🌙 <strong>Eid ul Fitr:</strong> Expected February 28, 2026</div>
+        </div>
     </div>
+    
     <!-- Hero Carousel Section -->
     <section id="home" class="hero">
         <div class="carousel">
@@ -84,7 +87,18 @@
             </div>
         </div>
     </section>
-
+    
+    <!-- Islamic Date Display -->
+    <div class="islamic-date-widget">
+        <div class="islamic-date">
+            <span class="icon">📅</span>
+            <span class="label">Islamic Date:</span>
+            <span id="hijri-date" class="date">Loading...</span>
+        </div>
+        <div class="gregorian-date">
+            <span id="gregorian-date" class="date"></span>
+        </div>
+    </div>
     <!-- Prayer Times Section -->
     <section id="prayer-times" class="prayer-times">
         <div class="container">
@@ -308,6 +322,7 @@
         </div>
     </footer>
     <script src="js/script.js"></script>
+    <script src="islamic-date.js"></script>
 </body>
 <!-- Add this right after <body> tag -->
 <div style="background: #ffd700; color: #333; padding: 10px; text-align: center; position: fixed; top: 0; width: 100%; z-index: 9999;">
