@@ -115,7 +115,7 @@ function calculatePrayerTimes() {
 
 // Initialize EmailJS with your Public Key
 // You can find this in EmailJS Dashboard → Account → API Keys
-emailjs.init("YOUR_PUBLIC_KEY_HERE"); // Replace with your actual public key
+emailjs.init("j_0Ojhk_ErEG0umZG"); // Replace with your actual public key
 
 // Set current date for pre-filled data
 document.addEventListener('DOMContentLoaded', function() {
@@ -141,7 +141,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     formMessages.className = '';
     
     // Send email using EmailJS
-    emailjs.sendForm('service_ggipb47', 'YOUR_TEMPLATE_ID', this)
+    emailjs.sendForm('service_ggipb47', 'template_jm3703x', this)
         .then(function(response) {
             // Success message
             showMessage('Message sent successfully! We will get back to you soon.', 'success');
@@ -171,3 +171,4 @@ function showMessage(message, type) {
         }, 5000);
     }
 }
+
