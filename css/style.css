@@ -472,38 +472,67 @@ nav ul li a:hover {
 }
 
 .contact-form {
-    grid-column: 1 / -1;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.contact-form h3 {
+    color: #2E8B57;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .form-group {
     margin-bottom: 20px;
 }
 
-.form-group input, .form-group select, .form-group textarea {
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
     width: 100%;
-    padding: 12px 15px;
+    padding: 12px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.form-group input[readonly] {
+    background-color: #f9f9f9;
+    color: #666;
+    border: 1px solid #eee;
 }
 
 .submit-btn {
-    background: #1a936f;
+    background-color: #2E8B57;
     color: white;
+    padding: 12px 30px;
     border: none;
-    padding: 12px 25px;
-    font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s;
 }
 
 .submit-btn:hover {
-    background: #0d5e3e;
+    background-color: #256f47;
 }
+
+.submit-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
 
 /* Footer */
 footer {
@@ -650,3 +679,4 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
