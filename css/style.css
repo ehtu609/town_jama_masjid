@@ -447,6 +447,12 @@ nav ul li a:hover {
     padding: 0 20px;
 }
 
+.contact-column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
 .contact-info h3, .map-container h3, .contact-form h3 {
     margin-bottom: 20px;
     color: #0d5e3e;
@@ -483,22 +489,15 @@ nav ul li a:hover {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    height: fit-content;
 }
 
 .form-group {
     margin-bottom: 20px;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: #0d5e3e;
-    font-weight: bold;
-}
-
 .form-group input,
-.form-group textarea,
-.form-group select {
+.form-group textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #ddd;
@@ -714,6 +713,7 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
 
 
 
