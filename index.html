@@ -199,90 +199,97 @@
     </section>
 
      
-    <!-- Contact Section -->
+    <!-- Contact Section - SINGLE UNIFIED SECTION -->
     <section id="contact" class="contact">
         <div class="container">
             <h2>Contact Us</h2>
             <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Visit Our Masjid</h3>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Address</h4>
-                            <p>Town Jama Masjid<br>Rahiman Nagar, Jaigaon<br>West Bengal 736182, India</p>
+                <!-- Left Column: Contact Info & Map -->
+                <div class="contact-column">
+                    <div class="contact-info">
+                        <h3>Visit Our Masjid</h3>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Address</h4>
+                                <p>Town Jama Masjid<br>Rahiman Nagar, Jaigaon<br>West Bengal 736182, India</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+91 8920556818</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>townjamamasjid@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Office Hours</h4>
+                                <p>Monday - Sunday<br>8:00 AM - 8:00 PM</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>+91 8920556818</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>townjamamasjid@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h4>Office Hours</h4>
-                            <p>Monday - Sunday<br>8:00 AM - 8:00 PM</p>
-                        </div>
+                    
+                    <!-- Map Section -->
+                    <div class="map-container">
+                        <h3>Our Location</h3>
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.347284331918!2d89.37511431504206!3d26.83643708316434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e3a3b4b4b4b4b4%3A0x3b3b3b3b3b3b3b3b!2sJaigaon%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
+                            width="100%" 
+                            height="300" 
+                            style="border:0; border-radius: 10px;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
                     </div>
                 </div>
                 
-                <!-- Map Section -->
-                <div class="map-container">
-                    <h3>Our Location</h3>
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.347284331918!2d89.37511431504206!3d26.83643708316434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e3a3b4b4b4b4b4%3A0x3b3b3b3b3b3b3b3b!2sJaigaon%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
-                        width="100%" 
-                        height="300" 
-                        style="border:0; border-radius: 10px;" 
-                        allowfullscreen="" 
-                        loading="lazy">
-                    </iframe>
+                <!-- Right Column: Contact Form -->
+                <div class="contact-column">
+                    <div class="contact-form">
+                        <h3>Send Us a Message</h3>
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                            </div>
+                            
+                            <!-- Hidden pre-filled fields -->
+                            <input type="hidden" name="to_email" value="ahmedehtesham609@gmail.com">
+                            <input type="hidden" name="company_name" value="Town Jama Masjid">
+                            <input type="hidden" name="prefilled_date" id="prefilled_date">
+                            
+                            <button type="submit" id="submit-btn">Send Message</button>
+                            
+                            <div id="form-messages">
+                                <!-- Success/Error messages will appear here -->
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                                
-<!-- Contact Form Section -->
-<section id="contact">
-    <div class="container">
-        <h2>Contact Us</h2>
-        <form id="contact-form">
-            <div class="form-group">
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
             </div>
-            <div class="form-group">
-                <input type="email" id="email" name="email" placeholder="Your Email" required>
-            </div>
-            <div class="form-group">
-                <input type="text" id="subject" name="subject" placeholder="Subject" required>
-            </div>
-            <div class="form-group">
-                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-            </div>
-            
-            <!-- Hidden pre-filled fields -->
-            <input type="hidden" name="to_email" value="ahmedehtesham609@gmail.com">
-            <input type="hidden" name="company_name" value="Your Business Name">
-            <input type="hidden" name="prefilled_date" id="prefilled_date">
-            
-            <button type="submit" id="submit-btn">Send Message</button>
-            
-            <div id="form-messages">
-                <!-- Success/Error messages will appear here -->
-            </div>
-        </form>
-    </div>
-</section>
-
-<!-- Add EmailJS SDK -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>                
+        </div>
+    </section>
+    
+    <!-- Add EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        
     <!-- Footer -->
     <footer>
         <div class="container">
