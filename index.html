@@ -90,7 +90,7 @@
     </section>
     
     <!-- Islamic Date Display -->
-    <div class="islamic-date-widget">
+    <!-- <div class="islamic-date-widget">
         <div class="islamic-date">
             <span class="icon">📅</span>
             <span class="label">Islamic Date:</span>
@@ -99,7 +99,7 @@
         <div class="gregorian-date">
             <span id="gregorian-date" class="date"></span>
         </div>
-    </div>
+    </div> -->
     <!-- Prayer Times Section -->
     <section id="prayer-times" class="prayer-times">
         <div class="container">
@@ -199,7 +199,7 @@
     </section>
 
      
-    <!-- Contact Section - SINGLE UNIFIED SECTION -->
+    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <h2>Contact Us</h2>
@@ -254,20 +254,38 @@
                 
                 <!-- Right Column: Contact Form -->
                 <div class="contact-column">
-                    <div class="contact-form">
-                        <h3>Send Us a Message</h3>
+                    <div style="background: #f9f9f9; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
+                        <h3 style="margin-bottom: 20px; color: #0d5e3e;">Send Us a Message</h3>
                         <form id="contact-form">
-                            <div class="form-group">
-                                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            <div style="margin-bottom: 20px;">
+                                <input type="text" id="name" name="name" placeholder="Your Name" required 
+                                       style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; box-sizing: border-box;"
+                                       value="Ehtesham Ahmed">
                             </div>
-                            <div class="form-group">
-                                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            <div style="margin-bottom: 20px;">
+                                <input type="email" id="email" name="email" placeholder="Your Email" required 
+                                       style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; box-sizing: border-box;"
+                                       value="townjamamasjid@gmail.com">
                             </div>
-                            <div class="form-group">
-                                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                            <div style="margin-bottom: 20px;">
+                                <input type="text" id="phone" name="phone" placeholder="Your Phone" required 
+                                       style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; box-sizing: border-box;"
+                                       value="8920556818">
                             </div>
-                            <div class="form-group">
-                                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                            <div style="margin-bottom: 20px;">
+                                <select id="inquiry_type" name="inquiry_type" required 
+                                        style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; box-sizing: border-box;">
+                                    <option value="">Select Inquiry Type</option>
+                                    <option value="General">General Inquiry</option>
+                                    <option value="Prayer">Prayer Times</option>
+                                    <option value="Event">Event Information</option>
+                                    <option value="Donation">Donation Query</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div style="margin-bottom: 20px;">
+                                <textarea id="message" name="message" placeholder="Type your message here..." rows="5" required 
+                                          style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; box-sizing: border-box; resize: vertical; min-height: 120px;"></textarea>
                             </div>
                             
                             <!-- Hidden pre-filled fields -->
@@ -275,9 +293,12 @@
                             <input type="hidden" name="company_name" value="Town Jama Masjid">
                             <input type="hidden" name="prefilled_date" id="prefilled_date">
                             
-                            <button type="submit" id="submit-btn">Send Message</button>
+                            <button type="submit" id="submit-btn" 
+                                    style="background: #1a936f; color: white; padding: 12px 30px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; width: 100%; transition: background 0.3s ease;">
+                                Send Message
+                            </button>
                             
-                            <div id="form-messages">
+                            <div id="form-messages" style="margin-top: 15px; padding: 10px; border-radius: 5px; display: none;">
                                 <!-- Success/Error messages will appear here -->
                             </div>
                         </form>
@@ -286,13 +307,14 @@
             </div>
         </div>
     </section>
+    
     <div style="background: red; color: white; padding: 10px;">
-    CSS TEST - If you see this in red, CSS is working
+        CSS TEST - If you see this in red, CSS is working
     </div>
     
     <!-- Add EmailJS SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-        
+    
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -331,7 +353,7 @@
         </div>
     </footer>
     <script src="js/script.js"></script>
-    <script src="islamic-date.js"></script>
+    <!-- <script src="islamic-date.js"></script> -->
 </body>
 <!-- Add this right after <body> tag -->
 <div style="background: #ffd700; color: #333; padding: 10px; text-align: center; position: fixed; top: 0; width: 100%; z-index: 9999;">
