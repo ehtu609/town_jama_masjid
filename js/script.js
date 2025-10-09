@@ -113,43 +113,61 @@ function calculatePrayerTimes() {
     document.getElementById('calculated-times').innerHTML = html;
 }
 
-//contactform_Script
+// Initialize EmailJS with your Public Key
+// You can find this in EmailJS Dashboard → Account → API Keys
+emailjs.init("YOUR_PUBLIC_KEY_HERE"); // Replace with your actual public key
 
+// Set current date for pre-filled data
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('masjid-contact-form');
-    
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const submitBtn = this.querySelector('.submit-btn');
-            const originalText = submitBtn.innerHTML;
-            
-            // Show loading state
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            submitBtn.disabled = true;
-            
-            // Submit the form
-            fetch(this.action, {
-                method: 'POST',
-                body: new FormData(this)
-            })
-            .then(response => {
-                if (response.ok) {
-                    alert('Message sent successfully! We will get back to you soon.');
-                    form.reset();
-                } else {
-                    throw new Error('Failed to send message');
-                }
-            })
-            .catch(error => {
-                alert('Error sending message. Please try again or contact us directly.');
-                console.error('Form submission error:', error);
-            })
-            .finally(() => {
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            });
-        });
+    const dateField = document.getElementById('prefilled_date');
+    if (dateField) {
+        dateField.value = new Date().toLocaleString();
     }
 });
+
+// Form submission handler
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const submitBtn = document.getElementById('submit-btn');
+    const formMessages = document.getElementById('form-messages');
+    
+    // Disable submit button and show loading state
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    
+    // Clear previous messages
+    formMessages.style.display = 'none';
+    formMessages.className = '';
+    
+    // Send email using EmailJS
+    emailjs.sendForm('service_ggipb47', 'YOUR_TEMPLATE_ID', this)
+        .then(function(response) {
+            // Success message
+            showMessage('Message sent successfully! We will get back to you soon.', 'success');
+            document.getElementById('contact-form').reset();
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+        }, function(error) {
+            // Error message
+            showMessage('Failed to send message. Please try again or contact us directly.', 'error');
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+            console.error('EmailJS Error:', error);
+        });
+});
+
+// Function to show messages
+function showMessage(message, type) {
+    const formMessages = document.getElementById('form-messages');
+    formMessages.textContent = message;
+    formMessages.className = type;
+    formMessages.style.display = 'block';
+    
+    // Auto-hide success messages after 5 seconds
+    if (type === 'success') {
+        setTimeout(() => {
+            formMessages.style.display = 'none';
+        }, 5000);
+    }
+}
