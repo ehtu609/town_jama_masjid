@@ -424,6 +424,7 @@ nav ul li a:hover {
     color: #0d5e3e;
 }
 
+
 /* Contact Section */
 .contact {
     padding: 60px 0;
@@ -441,6 +442,9 @@ nav ul li a:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .contact-info h3, .map-container h3, .contact-form h3 {
@@ -467,34 +471,41 @@ nav ul li a:hover {
 }
 
 .map-container iframe {
+    width: 100%;
+    height: 300px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Contact Form Styles */
-#contact {
-    padding: 50px 0;
+.contact-form {
     background: #f9f9f9;
-}
-
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 0 20px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
     margin-bottom: 20px;
 }
 
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #0d5e3e;
+    font-weight: bold;
+}
+
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
     width: 100%;
     padding: 12px;
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 16px;
     box-sizing: border-box;
+    font-family: inherit;
 }
 
 .form-group textarea {
@@ -503,7 +514,7 @@ nav ul li a:hover {
 }
 
 #submit-btn {
-    background: #007bff;
+    background: #1a936f;
     color: white;
     padding: 12px 30px;
     border: none;
@@ -511,10 +522,11 @@ nav ul li a:hover {
     cursor: pointer;
     font-size: 16px;
     width: 100%;
+    transition: background 0.3s ease;
 }
 
 #submit-btn:hover {
-    background: #0056b3;
+    background: #0d5e3e;
 }
 
 #submit-btn:disabled {
@@ -540,6 +552,23 @@ nav ul li a:hover {
     color: #721c24;
     border: 1px solid #f5c6cb;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .contact {
+        padding: 40px 0;
+    }
+    
+    .contact h2 {
+        font-size: 1.5rem;
+    }
+}
+
 /* Footer */
 footer {
     background: #0d5e3e;
@@ -685,5 +714,6 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
 
 
