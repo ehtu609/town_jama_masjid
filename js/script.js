@@ -113,9 +113,43 @@ function calculatePrayerTimes() {
     document.getElementById('calculated-times').innerHTML = html;
 }
 
-// Contact Form Submission
-document.getElementById('masjid-contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('Thank you for your message! We will get back to you soon.');
-    this.reset();
+//contactform_Script
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('masjid-contact-form');
+    
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            // Submit the form
+            fetch(this.action, {
+                method: 'POST',
+                body: new FormData(this)
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Message sent successfully! We will get back to you soon.');
+                    form.reset();
+                } else {
+                    throw new Error('Failed to send message');
+                }
+            })
+            .catch(error => {
+                alert('Error sending message. Please try again or contact us directly.');
+                console.error('Form submission error:', error);
+            })
+            .finally(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+    }
 });
