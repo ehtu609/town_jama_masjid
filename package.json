@@ -1,4 +1,10 @@
 {
+  "dependencies": {
+    "node-fetch": "^2.6.7",
+    "nodemailer": "^6.9.4"
+  }
+}
+{
   "name": "town-jama-masjid",
   "version": "1.0.0",
   "type": "module"
