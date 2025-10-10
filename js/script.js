@@ -1,96 +1,31 @@
-// Carousel Functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const slides = document.querySelectorAll('.carousel-slide');
-    const indicators = document.querySelectorAll('.indicator');
-    const prevBtn = document.querySelector('.carousel-control.prev');
-    const nextBtn = document.querySelector('.carousel-control.next');
-    let currentSlide = 0;
-    
-    // Function to show a specific slide
-    function showSlide(index) {
-        // Remove active class from all slides and indicators
-        slides.forEach(slide => slide.classList.remove('active'));
-        indicators.forEach(indicator => indicator.classList.remove('active'));
-        
-        // Add active class to current slide and indicator
-        slides[index].classList.add('active');
-        indicators[index].classList.add('active');
-        
-        currentSlide = index;
-    }
-    
-    // Next slide function
-    function nextSlide() {
-        let nextIndex = (currentSlide + 1) % slides.length;
-        showSlide(nextIndex);
-    }
-    
-    // Previous slide function
-    function prevSlide() {
-        let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
-        showSlide(prevIndex);
-    }
-    
-    // Event listeners for buttons
-    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
-    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-    
-    // Event listeners for indicators
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-            showSlide(index);
-        });
-    });
-    
-    // Auto slide every 5 seconds
-    setInterval(nextSlide, 5000);
-    
-    // Set today's date in the prayer calculator
-    const today = new Date();
-    const formattedDate = today.toISOString().split('T')[0];
-    const prayerDateInput = document.getElementById('prayer-date');
-    if (prayerDateInput) {
-        prayerDateInput.value = formattedDate;
-    }
-});
+// contact.js
+document.getElementById('contact-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  const formData = {
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    message: document.getElementById('message').value
+  };
 
-// Prayer Times Calculator
-function calculatePrayerTimes() {
-    const dateInput = document.getElementById('prayer-date');
-    if (!dateInput || !dateInput.value) {
-        alert('Please select a date');
-        return;
+  try {
+    const response = await fetch('/.netlify/functions/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData)
+    });
+
+    const result = await response.json();
+    
+    if (response.ok) {
+      alert('Message sent successfully!');
+      e.target.reset();
+    } else {
+      alert(result.error || 'Something went wrong!');
     }
-    
-    const selectedDate = new Date(dateInput.value);
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    const formattedDate = selectedDate.toLocaleDateString('en-US', options);
-    
-    // Mock prayer times calculation
-    const prayerTimes = {
-        Fajr: '4:25 AM',
-        Dhuhr: '12:45 PM',
-        Asr: '3:45 PM',
-        Maghrib: '5:22 PM',
-        Isha: '7:45 PM'
-    };
-    
-    let html = `<h3>Prayer Times for ${formattedDate}</h3>`;
-    html += '<div class="prayer-grid" style="margin-top: 20px;">';
-    
-    for (const [prayer, time] of Object.entries(prayerTimes)) {
-        html += `
-            <div class="prayer-item">
-                <h3>${prayer}</h3>
-                <p class="jamaat-time">${time}</p>
-            </div>
-        `;
-    }
-    
-    html += '</div>';
-    
-    const calculatedTimes = document.getElementById('calculated-times');
-    if (calculatedTimes) {
-        calculatedTimes.innerHTML = html;
-    }
-}
+  } catch (error) {
+    alert('Network error. Please try again.');
+  }
+});
