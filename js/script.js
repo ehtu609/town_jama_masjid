@@ -45,35 +45,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Auto slide every 5 seconds
     setInterval(nextSlide, 5000);
     
-    // Islamic Date Functionality
-    updateIslamicDate();
-    
     // Set today's date in the prayer calculator
     const today = new Date();
     const formattedDate = today.toISOString().split('T')[0];
     document.getElementById('prayer-date').value = formattedDate;
 });
-
-// Islamic Date Function
-function updateIslamicDate() {
-    const today = new Date();
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    const gregorianDate = today.toLocaleDateString('en-US', options);
-    document.getElementById('gregorian-date').textContent = gregorianDate;
-    
-    // Simple Hijri date approximation (for demonstration)
-    const hijriMonths = ['Muharram', 'Safar', 'Rabi\' al-Awwal', 'Rabi\' al-Thani', 
-                        'Jumada al-Awwal', 'Jumada al-Thani', 'Rajab', 'Sha\'ban', 
-                        'Ramadan', 'Shawwal', 'Dhu al-Qi\'dah', 'Dhu al-Hijjah'];
-    
-    // This is a simplified calculation - in production use a proper Hijri date library
-    const hijriDay = Math.floor(Math.random() * 28) + 1;
-    const hijriMonth = hijriMonths[Math.floor(Math.random() * 12)];
-    const hijriYear = 1445 + Math.floor(Math.random() * 2);
-    
-    const hijriDate = `${hijriDay} ${hijriMonth}, ${hijriYear} AH`;
-    document.getElementById('hijri-date').textContent = hijriDate;
-}
 
 // Prayer Times Calculator
 function calculatePrayerTimes() {
