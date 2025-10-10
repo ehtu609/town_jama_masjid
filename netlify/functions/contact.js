@@ -28,7 +28,6 @@ exports.handler = async (event, context) => {
             }
         });
 
-        // Email content
         const mailOptions = {
             from: process.env.EMAIL_USER,
             to: 'townjamamasjid@gmail.com',
