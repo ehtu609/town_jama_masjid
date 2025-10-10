@@ -8,9 +8,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Function to show a specific slide
     function showSlide(index) {
+        // Remove active class from all slides and indicators
         slides.forEach(slide => slide.classList.remove('active'));
         indicators.forEach(indicator => indicator.classList.remove('active'));
         
+        // Add active class to current slide and indicator
         slides[index].classList.add('active');
         indicators[index].classList.add('active');
         
@@ -30,8 +32,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Event listeners for buttons
-    nextBtn.addEventListener('click', nextSlide);
-    prevBtn.addEventListener('click', prevSlide);
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
     
     // Event listeners for indicators
     indicators.forEach((indicator, index) => {
@@ -46,21 +48,25 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set today's date in the prayer calculator
     const today = new Date();
     const formattedDate = today.toISOString().split('T')[0];
-    document.getElementById('prayer-date').value = formattedDate;
+    const prayerDateInput = document.getElementById('prayer-date');
+    if (prayerDateInput) {
+        prayerDateInput.value = formattedDate;
+    }
 });
 
 // Prayer Times Calculator
 function calculatePrayerTimes() {
-    const dateInput = document.getElementById('prayer-date').value;
-    if (!dateInput) {
+    const dateInput = document.getElementById('prayer-date');
+    if (!dateInput || !dateInput.value) {
         alert('Please select a date');
         return;
     }
     
-    const selectedDate = new Date(dateInput);
+    const selectedDate = new Date(dateInput.value);
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     const formattedDate = selectedDate.toLocaleDateString('en-US', options);
     
+    // Mock prayer times calculation
     const prayerTimes = {
         Fajr: '4:25 AM',
         Dhuhr: '12:45 PM',
@@ -82,5 +88,9 @@ function calculatePrayerTimes() {
     }
     
     html += '</div>';
-    document.getElementById('calculated-times').innerHTML = html;
+    
+    const calculatedTimes = document.getElementById('calculated-times');
+    if (calculatedTimes) {
+        calculatedTimes.innerHTML = html;
+    }
 }
