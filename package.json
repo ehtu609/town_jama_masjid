@@ -1,15 +1,5 @@
 {
   "name": "town-jama-masjid",
   "version": "1.0.0",
-  "description": "Town Jama Masjid Website",
-  "main": "index.html",
-  "scripts": {
-    "build": "echo 'Building site...'"
-  },
-  "dependencies": {
-    "nodemailer": "^6.9.7"
-  },
-  "devDependencies": {
-    "@netlify/functions": "^2.0.0"
-  }
+  "type": "module"
 }
