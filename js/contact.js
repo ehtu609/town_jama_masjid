@@ -4,7 +4,9 @@ class ContactForm {
         this.submitBtn = document.getElementById('submit-btn');
         this.messageDiv = document.getElementById('form-messages');
         
-        this.init();
+        if (this.form && this.submitBtn && this.messageDiv) {
+            this.init();
+        }
     }
 
     init() {
@@ -14,7 +16,10 @@ class ContactForm {
 
     setPrefilledDate() {
         const now = new Date().toLocaleString();
-        document.getElementById('prefilled_date').value = now;
+        const prefilledDate = document.getElementById('prefilled_date');
+        if (prefilledDate) {
+            prefilledDate.value = now;
+        }
     }
 
     async handleSubmit(e) {
