@@ -6,16 +6,10 @@
     <title>Town Jama Masjid - Islamic Center</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    
-    
 </head>
 <body>
     <!-- Header Section -->
     <header>
-        <!-- Add this in header or prayer section -->
-        <!-- <div class="islamic-date">
-            <p>📅 Today: <span id="hijri-date">Loading Islamic date...</span></p>
-        </div> -->
         <div class="container">
             <div class="logo">
                 <h1>TOWN JAMA MASJID</h1>
@@ -89,17 +83,6 @@
         </div>
     </section>
     
-    <!-- Islamic Date Display -->
-    <!-- <div class="islamic-date-widget">
-        <div class="islamic-date">
-            <span class="icon">📅</span>
-            <span class="label">Islamic Date:</span>
-            <span id="hijri-date" class="date">Loading...</span>
-        </div>
-        <div class="gregorian-date">
-            <span id="gregorian-date" class="date"></span>
-        </div>
-    </div> -->
     <!-- Prayer Times Section -->
     <section id="prayer-times" class="prayer-times">
         <div class="container">
@@ -143,7 +126,7 @@
         </div>
     </section>
 
-    <!-- Add this after prayer times section -->
+    <!-- Prayer Times Calculator -->
     <section class="prayer-calculator">
         <div class="container">
             <h2>Prayer Times Calculator</h2>
@@ -198,7 +181,6 @@
         </div>
     </section>
 
-     
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
@@ -288,9 +270,6 @@
                                           style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; box-sizing: border-box; resize: vertical; min-height: 120px;"></textarea>
                             </div>
                             
-                            <!-- Hidden pre-filled fields -->
-                            <input type="hidden" name="to_email" value="ahmedehtesham609@gmail.com">
-                            <input type="hidden" name="company_name" value="Town Jama Masjid">
                             <input type="hidden" name="prefilled_date" id="prefilled_date">
                             
                             <button type="submit" id="submit-btn" 
@@ -298,22 +277,13 @@
                                 Send Message
                             </button>
                             
-                            <div id="form-messages" style="margin-top: 15px; padding: 10px; border-radius: 5px; display: none;">
-                                <!-- Success/Error messages will appear here -->
-                            </div>
+                            <div id="form-messages" style="margin-top: 15px; padding: 10px; border-radius: 5px; display: none;"></div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
-    <div style="background: red; color: white; padding: 10px;">
-        CSS TEST - If you see this in red, CSS is working
-    </div>
-    
-    <!-- Add EmailJS SDK -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     
     <!-- Footer -->
     <footer>
@@ -352,11 +322,14 @@
             </div>
         </div>
     </footer>
+
+    <!-- Scripts -->
     <script src="js/script.js"></script>
-    <!-- <script src="islamic-date.js"></script> -->
+    <script src="js/contact.js"></script>
+
+    <!-- Development Banner -->
+    <div style="background: #ffd700; color: #333; padding: 10px; text-align: center; position: fixed; top: 0; width: 100%; z-index: 9999;">
+        🕌 Website Under Development - Coming Soon! 🕌
+    </div>
 </body>
-<!-- Add this right after <body> tag -->
-<div style="background: #ffd700; color: #333; padding: 10px; text-align: center; position: fixed; top: 0; width: 100%; z-index: 9999;">
-    🕌 Website Under Development - Coming Soon! 🕌
-</div>
 </html>
