@@ -8,11 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Function to show a specific slide
     function showSlide(index) {
-        // Remove active class from all slides and indicators
         slides.forEach(slide => slide.classList.remove('active'));
         indicators.forEach(indicator => indicator.classList.remove('active'));
         
-        // Add active class to current slide and indicator
         slides[index].classList.add('active');
         indicators[index].classList.add('active');
         
@@ -63,7 +61,6 @@ function calculatePrayerTimes() {
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     const formattedDate = selectedDate.toLocaleDateString('en-US', options);
     
-    // Mock prayer times calculation (in production, use proper calculation methods)
     const prayerTimes = {
         Fajr: '4:25 AM',
         Dhuhr: '12:45 PM',
@@ -85,6 +82,5 @@ function calculatePrayerTimes() {
     }
     
     html += '</div>';
-    
     document.getElementById('calculated-times').innerHTML = html;
 }
