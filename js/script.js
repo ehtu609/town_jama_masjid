@@ -1,68 +1,88 @@
-// Cleaned and Simplified JavaScript
+/**
+ * TOWN JAMA MASJID - MAIN JAVASCRIPT FILE
+ * This file contains all the functionality for the mosque website
+ * Including: EmailJS contact form, prayer times calculator, and general utilities
+ */
 
+// Wait for the DOM to be fully loaded before executing scripts
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Website loaded successfully');
+    console.log('Town Jama Masjid website loaded successfully');
     
-    // Initialize EmailJS
-    initializeEmailJS();
+    // Initialize all main functionalities
+    initializeEmailJS();      // Set up email service
+    setTodaysDate();          // Set current date in prayer calculator
     
-    // Set today's date in prayer calculator
-    setTodaysDate();
-    
-    // Note: Carousel functionality removed since we only have one image
+    // Note: Carousel functionality removed as we only have one static image
 });
 
 /**
- * Initialize EmailJS with your Public Key
+ * INITIALIZE EMAILJS SERVICE
+ * Sets up the email service with your public key and configures the contact form
  */
 function initializeEmailJS() {
     // Initialize EmailJS with your Public Key
+    // Replace "pi8Au8y-sgqaRjOEo" with your actual EmailJS public key
     emailjs.init("pi8Au8y-sgqaRjOEo");
     console.log('EmailJS initialized successfully');
     
-    // Setup contact form event listener
+    // Set up the contact form event listener
     setupContactForm();
 }
 
 /**
- * Set up contact form submission
+ * SET UP CONTACT FORM
+ * Handles form submission, validation, and email sending
  */
 function setupContactForm() {
     const contactForm = document.getElementById('contact-form');
     
+    // Check if contact form exists on the page
     if (!contactForm) {
-        console.error('Contact form not found!');
+        console.error('Contact form not found! Check your HTML structure.');
         return;
     }
     
+    // Add submit event listener to the form
     contactForm.addEventListener('submit', function(event) {
+        // Prevent the default form submission
         event.preventDefault();
         
+        // Get the submit button and store original text
         const submitBtn = this.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
         
-        // Show "Sending..." state
+        // Show "Sending..." state and disable button
         submitBtn.textContent = 'Sending...';
         submitBtn.disabled = true;
         
-        console.log('Sending email...');
+        console.log('Attempting to send email...');
         
-        // Send email using EmailJS
+        /**
+         * SEND EMAIL USING EMAILJS
+         * Parameters:
+         * - 'service_sunf15q': Your EmailJS service ID
+         * - 'template_iirfx9j': Your EmailJS template ID  
+         * - this: The form element containing the data
+         */
         emailjs.sendForm('service_sunf15q', 'template_iirfx9j', this)
             .then(function(response) {
-                console.log('SUCCESS!', response.status, response.text);
-                showFormMessage('Message sent successfully!', 'success');
+                // SUCCESS: Email sent successfully
+                console.log('SUCCESS! Email sent:', response.status, response.text);
+                showFormMessage('Message sent successfully! We will get back to you soon.', 'success');
+                
+                // Reset the form fields
                 contactForm.reset();
                 
-                // Reset button text
+                // Reset button to original state
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
             })
             .catch(function(error) {
-                console.error('FAILED...', error);
-                showFormMessage('Failed to send message. Please try again.', 'error');
+                // ERROR: Failed to send email
+                console.error('FAILED to send email:', error);
+                showFormMessage('Failed to send message. Please try again or contact us directly.', 'error');
                 
-                // Reset button text
+                // Reset button to original state
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
             });
@@ -70,16 +90,21 @@ function setupContactForm() {
 }
 
 /**
- * Show form message to user
+ * SHOW FORM MESSAGE
+ * Displays success or error messages to the user
+ * @param {string} message - The message to display
+ * @param {string} type - 'success' or 'error'
  */
 function showFormMessage(message, type) {
     const messageDiv = document.getElementById('form-messages');
+    
     if (messageDiv) {
+        // Set message text and styling based on type
         messageDiv.textContent = message;
-        messageDiv.className = type; // 'success' or 'error'
+        messageDiv.className = type; // Applies 'success' or 'error' CSS class
         messageDiv.style.display = 'block';
         
-        // Hide message after 5 seconds
+        // Auto-hide message after 5 seconds
         setTimeout(() => {
             messageDiv.style.display = 'none';
         }, 5000);
@@ -87,45 +112,60 @@ function showFormMessage(message, type) {
 }
 
 /**
- * Set today's date in prayer calculator
+ * SET TODAY'S DATE
+ * Pre-fills the prayer calculator date field with today's date
  */
 function setTodaysDate() {
     const today = new Date();
+    // Format date as YYYY-MM-DD for input type="date"
     const formattedDate = today.toISOString().split('T')[0];
     const prayerDateInput = document.getElementById('prayer-date');
     
+    // Set the value if the input exists
     if (prayerDateInput) {
         prayerDateInput.value = formattedDate;
     }
 }
 
 /**
- * Prayer Times Calculator
+ * PRAYER TIMES CALCULATOR
+ * Calculates and displays prayer times for selected date
+ * Note: This uses mock data. For real implementation, connect to prayer times API
  */
 function calculatePrayerTimes() {
     const dateInput = document.getElementById('prayer-date');
     
+    // Validate date input
     if (!dateInput || !dateInput.value) {
         alert('Please select a date');
         return;
     }
     
+    // Parse selected date and format it nicely
     const selectedDate = new Date(dateInput.value);
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     const formattedDate = selectedDate.toLocaleDateString('en-US', options);
     
-    // Mock prayer times calculation (same for all dates in this example)
+    /**
+     * MOCK PRAYER TIMES DATA
+     * In a real implementation, you would:
+     * 1. Call a prayer times API based on location coordinates
+     * 2. Calculate times based on date and location
+     * 3. Adjust for daylight saving time if applicable
+     */
     const prayerTimes = {
         Fajr: '4:25 AM',
-        Dhuhr: '12:45 PM',
+        Dhuhr: '12:45 PM', 
         Asr: '3:45 PM',
         Maghrib: '5:22 PM',
         Isha: '7:45 PM'
     };
     
+    // Generate HTML for displaying prayer times
     let html = `<h3>Prayer Times for ${formattedDate}</h3>`;
     html += '<div class="prayer-grid" style="margin-top: 20px;">';
     
+    // Loop through prayer times and create HTML for each
     for (const [prayer, time] of Object.entries(prayerTimes)) {
         html += `
             <div class="prayer-item">
@@ -137,8 +177,18 @@ function calculatePrayerTimes() {
     
     html += '</div>';
     
+    // Display the generated HTML
     const calculatedTimes = document.getElementById('calculated-times');
     if (calculatedTimes) {
         calculatedTimes.innerHTML = html;
     }
 }
+
+/**
+ * FUTURE ENHANCEMENTS:
+ * 1. Real prayer times API integration
+ * 2. Islamic date converter
+ * 3. Event calendar
+ * 4. Donation system
+ * 5. Live prayer times based on location
+ */
