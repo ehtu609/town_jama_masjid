@@ -239,34 +239,21 @@
                         <h3 style="margin-bottom: 20px; color: #0d5e3e;">Send Us a Message</h3>
                         <form id="contact-form">
                             <div style="margin-bottom: 20px;">
-                                <input type="text" id="name" name="name" placeholder="Your Name" required 
+                                <input type="text" id="name" name="name" placeholder="Your Full Name" required 
                                        style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; box-sizing: border-box;">
                             </div>
                             <div style="margin-bottom: 20px;">
-                                <input type="email" id="email" name="email" placeholder="Your Email" required 
+                                <input type="email" id="email" name="email" placeholder="Your Email Address" required 
                                        style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; box-sizing: border-box;">
                             </div>
                             <div style="margin-bottom: 20px;">
-                                <input type="text" id="phone" name="phone" placeholder="Your Phone" 
+                                <input type="tel" id="phone" name="phone" placeholder="Your Phone Number (Optional)" 
                                        style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; box-sizing: border-box;">
-                            </div>
-                            <div style="margin-bottom: 20px;">
-                                <select id="inquiry_type" name="inquiry_type" required 
-                                        style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; box-sizing: border-box;">
-                                    <option value="">Select Inquiry Type</option>
-                                    <option value="General">General Inquiry</option>
-                                    <option value="Prayer">Prayer Times</option>
-                                    <option value="Event">Event Information</option>
-                                    <option value="Donation">Donation Query</option>
-                                    <option value="Other">Other</option>
-                                </select>
                             </div>
                             <div style="margin-bottom: 20px;">
                                 <textarea id="message" name="message" placeholder="Type your message here..." rows="5" required 
                                           style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; box-sizing: border-box; resize: vertical; min-height: 120px;"></textarea>
                             </div>
-                            
-                            <input type="hidden" name="prefilled_date" id="prefilled_date">
                             
                             <button type="submit" id="submit-btn" 
                                     style="background: #1a936f; color: white; padding: 12px 30px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; width: 100%; transition: background 0.3s ease;">
@@ -276,7 +263,7 @@
                             <div id="form-messages" style="margin-top: 15px; padding: 10px; border-radius: 5px; display: none;"></div>
                         </form>
                     </div>
-                </div>  
+                </div> 
             </div>
         </div>
     </section>
