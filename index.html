@@ -6,8 +6,15 @@
     <title>Town Jama Masjid - Islamic Center</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Add EmailJS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
+    <!-- Development Banner -->
+    <div class="dev-banner">
+        🕌 Website Under Development - Coming Soon! 🕌
+    </div>
+
     <!-- Header Section -->
     <header>
         <div class="container">
@@ -41,7 +48,7 @@
     <section id="home" class="hero">
         <div class="carousel">
             <div class="carousel-slides">
-                <!-- Slide 1 -->
+                <!-- Single Slide Only (as requested) -->
                 <div class="carousel-slide active">
                     <img src="images/hero1.jpg" alt="Masjid Exterior">
                     <div class="carousel-content">
@@ -50,36 +57,9 @@
                         <button class="cta-button">Learn More</button>
                     </div>
                 </div>
-                <!-- Slide 2 -->
-                <div class="carousel-slide">
-                    <img src="images/hero2.jpg" alt="Prayer Hall">
-                    <div class="carousel-content">
-                        <h2>Daily Prayers</h2>
-                        <p>Join us for five daily prayers and spiritual gatherings</p>
-                        <button class="cta-button">View Prayer Times</button>
-                    </div>
-                </div>
-                <!-- Slide 3 -->
-                <div class="carousel-slide">
-                    <img src="images/hero3.jpg" alt="Community Events">
-                    <div class="carousel-content">
-                        <h2>Community Services</h2>
-                        <p>Engage in various community programs and events</p>
-                        <button class="cta-button">Our Services</button>
-                    </div>
-                </div>
             </div>
             
-            <!-- Carousel Controls -->
-            <button class="carousel-control prev">&#10094;</button>
-            <button class="carousel-control next">&#10095;</button>
-            
-            <!-- Carousel Indicators -->
-            <div class="carousel-indicators">
-                <span class="indicator active" data-slide="0"></span>
-                <span class="indicator" data-slide="1"></span>
-                <span class="indicator" data-slide="2"></span>
-            </div>
+            <!-- Remove controls and indicators since we only have one image -->
         </div>
     </section>
     
@@ -144,11 +124,8 @@
             <h2>About Our Masjid</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Established in 1968, Town Jama Masjid has been the spiritual heart of Rahiman Nagar and Jaigaon for over five decades. We are more than just a place of worship - we are a vibrant center for community development, Islamic education, and social upliftment.</p>
-                    
-                    <p>Our mission is to serve the Muslim community through religious guidance, educational programs, and social services, fostering unity and spiritual growth while preserving our Islamic heritage.</p>
-                    
-                    <p>Join us in building a stronger, more connected Muslim society rooted in faith and service.</p>
+                    <p>Established in 1968, Town Jama Masjid has been the spiritual heart of Rahiman Nagar and Jaigaon for over five decades.</p>
+                    <p>Our mission is to serve the Muslim community through religious guidance, educational programs, and social services.</p>
                 </div>
                 <div class="about-image">
                     <img src="images/masjid-exterior.jpg" alt="Town Jama Masjid Exterior">
@@ -211,13 +188,6 @@
                                 <p>townjamamasjid@gmail.com</p>
                             </div>
                         </div>
-                        <div class="contact-item">
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <h4>Office Hours</h4>
-                                <p>Monday - Sunday<br>8:00 AM - 8:00 PM</p>
-                            </div>
-                        </div>
                     </div>
                     
                     <!-- Map Section -->
@@ -235,43 +205,27 @@
                 </div>
 
                 <!-- Right Column: Contact Form -->
-                <!-- <div class="contact-column">
-                    <div style="background: #f9f9f9; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
-                        <h3 style="margin-bottom: 20px; color: #0d5e3e;">Send Us a Message</h3>
+                <div class="contact-column">
+                    <div class="contact-form">
+                        <h3>Send Us a Message</h3>
                         <form id="contact-form">
-                            <div style="margin-bottom: 20px;">
-                                <input type="text" id="name" name="name" placeholder="Your Full Name" required 
-                                       style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; box-sizing: border-box;">
+                            <div class="form-group">
+                                <input type="text" name="from_name" placeholder="Your Full Name" required>
                             </div>
-                            <div style="margin-bottom: 20px;">
-                                <input type="email" id="email" name="email" placeholder="Your Email Address" required 
-                                       style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; box-sizing: border-box;">
+                            <div class="form-group">
+                                <input type="email" name="from_email" placeholder="Your Email Address" required>
                             </div>
-                            <div style="margin-bottom: 20px;">
-                                <input type="tel" id="phone" name="phone" placeholder="Your Phone Number (Optional)" 
-                                       style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; box-sizing: border-box;">
+                            <div class="form-group">
+                                <input type="tel" name="from_phone" placeholder="Your Phone Number (Optional)">
                             </div>
-                            <div style="margin-bottom: 20px;">
-                                <textarea id="message" name="message" placeholder="Type your message here..." rows="5" required 
-                                          style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; box-sizing: border-box; resize: vertical; min-height: 120px;"></textarea>
+                            <div class="form-group">
+                                <textarea name="message" placeholder="Type your message here..." rows="5" required></textarea>
                             </div>
-                            
-                            <button type="submit" id="submit-btn" 
-                                    style="background: #1a936f; color: white; padding: 12px 30px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; width: 100%; transition: background 0.3s ease;">
-                                Send Message
-                            </button>
-                            
-                            <div id="form-messages" style="margin-top: 15px; padding: 10px; border-radius: 5px; display: none;"></div>
+                            <button type="submit" id="submit-btn">Send Message</button>
+                            <div id="form-messages"></div>
                         </form>
                     </div>
-                </div> -->
-                <form id="contact-form">
-                    <input type="text" name="from_name" placeholder="Your Name" required>
-                    <input type="email" name="from_email" placeholder="Your Email" required>
-                    <input type="tel" name="from_phone" placeholder="Your Phone">
-                    <textarea name="message" placeholder="Your Message" required></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
+                </div>
             </div>
         </div>
     </section>
@@ -286,7 +240,6 @@
                     <p><i class="fas fa-phone"></i> +91 8920556818</p>
                     <p><i class="fas fa-envelope"></i> townjamamasjid@gmail.com</p>
                     
-                    <!-- Social Media Links -->
                     <div class="social-links">
                         <a href="https://www.youtube.com/@TownJamaMasjid" target="_blank" class="social-icon">
                             <i class="fab fa-youtube"></i>
@@ -296,9 +249,6 @@
                         </a>
                         <a href="https://wa.me/8920556818" target="_blank" class="social-icon">
                             <i class="fab fa-whatsapp"></i>
-                        </a>
-                        <a href="https://x.com/JamaMasjid1968" target="_blank" class="social-icon">
-                            <i class="fab fa-twitter"></i>
                         </a>
                     </div>
                 </div>
@@ -316,11 +266,5 @@
 
     <!-- Scripts -->
     <script src="js/script.js"></script>
-    <script src="js/contact.js"></script>
-
-    <!-- Development Banner -->
-    <div style="background: #ffd700; color: #333; padding: 10px; text-align: center; position: fixed; top: 0; width: 100%; z-index: 9999;">
-        🕌 Website Under Development - Coming Soon! 🕌
-    </div>
 </body>
 </html>
