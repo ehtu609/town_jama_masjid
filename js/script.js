@@ -129,3 +129,49 @@ function calculatePrayerTimes() {
     }
 }
 
+// EmailJS Initialization and Contact Form
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize EmailJS with your Public Key
+    emailjs.init("pi8Au8y-sgqaRjOEo"); // Replace with your actual public key
+    
+    // Contact form functionality
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            // Show "Sending..." state
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Send email using EmailJS
+            emailjs.sendForm('service_sunf15q', 'template_iirfx9j', this)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    submitBtn.textContent = 'Message Sent!';
+                    contactForm.reset();
+                    
+                    // Reset button after 3 seconds
+                    setTimeout(() => {
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    }, 3000);
+                })
+                .catch(function(error) {
+                    console.error('FAILED...', error);
+                    submitBtn.textContent = 'Failed to Send';
+                    
+                    // Reset button after 3 seconds
+                    setTimeout(() => {
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    }, 3000);
+                });
+        });
+    }
+});
+
+
