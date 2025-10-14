@@ -1,10 +1,44 @@
-// Carousel Functionality
+// Carousel functionality
 document.addEventListener('DOMContentLoaded', function() {
+    let currentSlide = 0;
     const slides = document.querySelectorAll('.carousel-slide');
     const indicators = document.querySelectorAll('.indicator');
-    const prevBtn = document.querySelector('.carousel-control.prev');
-    const nextBtn = document.querySelector('.carousel-control.next');
-    let currentSlide = 0;
+    const totalSlides = slides.length;
+
+    function showSlide(n) {
+        // Remove active class from all slides
+        slides.forEach(slide => slide.classList.remove('active'));
+        indicators.forEach(indicator => indicator.classList.remove('active'));
+        
+        // Calculate current slide
+        currentSlide = (n + totalSlides) % totalSlides;
+        
+        // Add active class to current slide
+        slides[currentSlide].classList.add('active');
+        indicators[currentSlide].classList.add('active');
+    }
+
+    // Next/Previous buttons
+    document.querySelector('.carousel-control.next').addEventListener('click', () => {
+        showSlide(currentSlide + 1);
+    });
+
+    document.querySelector('.carousel-control.prev').addEventListener('click', () => {
+        showSlide(currentSlide - 1);
+    });
+
+    // Indicator clicks
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            showSlide(index);
+        });
+    });
+
+    // Auto slide every 5 seconds
+    setInterval(() => {
+        showSlide(currentSlide + 1);
+    }, 5000);
+});
     
     // Function to show a specific slide
     function showSlide(index) {
@@ -94,3 +128,4 @@ function calculatePrayerTimes() {
         calculatedTimes.innerHTML = html;
     }
 }
+
