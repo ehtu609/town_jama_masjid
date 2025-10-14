@@ -235,7 +235,7 @@
                 </div>
 
                 <!-- Right Column: Contact Form -->
-                <div class="contact-column">
+                <!-- <div class="contact-column">
                     <div style="background: #f9f9f9; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
                         <h3 style="margin-bottom: 20px; color: #0d5e3e;">Send Us a Message</h3>
                         <form id="contact-form">
@@ -264,7 +264,14 @@
                             <div id="form-messages" style="margin-top: 15px; padding: 10px; border-radius: 5px; display: none;"></div>
                         </form>
                     </div>
-                </div>
+                </div> -->
+                <form id="contact-form">
+                    <input type="text" name="from_name" placeholder="Your Name" required>
+                    <input type="email" name="from_email" placeholder="Your Email" required>
+                    <input type="tel" name="from_phone" placeholder="Your Phone">
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
             </div>
         </div>
     </section>
