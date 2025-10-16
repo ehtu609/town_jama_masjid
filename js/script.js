@@ -184,6 +184,80 @@ function calculatePrayerTimes() {
     }
 }
 
+// Madrasa Registration Form Function
+function openRegistrationForm() {
+    // Create modal for registration form
+    const modal = document.createElement('div');
+    modal.className = 'modal';
+    modal.innerHTML = `
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Madrasa Registration Form</h3>
+            <form id="madrasa-registration-form">
+                <div class="form-group">
+                    <label for="student-name">Student Name *</label>
+                    <input type="text" id="student-name" name="student-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="student-age">Student Age *</label>
+                    <input type="number" id="student-age" name="student-age" required>
+                </div>
+                <div class="form-group">
+                    <label for="program">Select Program *</label>
+                    <select id="program" name="program" required>
+                        <option value="">Choose a program</option>
+                        <option value="kids">Kids Program (5-8 years)</option>
+                        <option value="junior">Junior Program (9-12 years)</option>
+                        <option value="youth">Youth Program (13-17 years)</option>
+                        <option value="adult">Adult Program (18+ years)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="parent-name">Parent/Guardian Name *</label>
+                    <input type="text" id="parent-name" name="parent-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="parent-phone">Parent Phone *</label>
+                    <input type="tel" id="parent-phone" name="parent-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="parent-email">Parent Email</label>
+                    <input type="email" id="parent-email" name="parent-email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Information</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Registration</button>
+            </form>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    
+    // Close modal functionality
+    const closeButton = modal.querySelector('.close-button');
+    closeButton.onclick = function() {
+        document.body.removeChild(modal);
+    };
+    
+    // Close when clicking outside modal
+    modal.onclick = function(event) {
+        if (event.target === modal) {
+            document.body.removeChild(modal);
+        }
+    };
+    
+    // Form submission
+    const form = modal.querySelector('#madrasa-registration-form');
+    form.onsubmit = function(e) {
+        e.preventDefault();
+        // Here you would typically send the form data to your server
+        alert('Registration submitted successfully! We will contact you soon.');
+        document.body.removeChild(modal);
+    };
+}
+
 /**
  * FUTURE ENHANCEMENTS:
  * 1. Real prayer times API integration
@@ -192,3 +266,4 @@ function calculatePrayerTimes() {
  * 4. Donation system
  * 5. Live prayer times based on location
  */
+
