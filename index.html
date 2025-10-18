@@ -281,64 +281,76 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>Visit Our Masjid</h3>
-                    <p><strong>Address:</strong> Town Jama Masjid, Rahiman Nagar, Jaigaon, West Bengal 736182, India</p>
-                    <p><strong>Phone:</strong> +91 8920556818</p>
-                    <p><strong>Email:</strong> townjamamasjid@gmail.com</p>
-                    
-                    <h3 style="margin-top: 30px;">Prayer Times</h3>
-                    <p><strong>Fajr:</strong> 4:55 AM | <strong>Dhuhr:</strong> 1:15 PM</p>
-                    <p><strong>Asr:</strong> 4:00 PM | <strong>Maghrib:</strong> 5:25 PM</p>
-                    <p><strong>Isha:</strong> 8:15 PM | <strong>Jumu'ah:</strong> 1:00 PM</p>
-                </div>
-                <div class="contact-form">
-                    <h3>Send Us a Message</h3>
-                    <form id="contactForm">
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <input type="tel" placeholder="Your Phone">
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
-                        <button type="submit">Send Message</button>
-                    </form>
-                </div>
+<!-- In your contact section, replace the current contact-grid with this: -->
+<div class="contact-grid">
+    <div class="contact-info">
+        <h3>Visit Our Masjid</h3>
+        <p><strong>Address:</strong> Town Jama Masjid, Rahiman Nagar, Jaigaon, West Bengal 736182, India</p>
+        <p><strong>Phone:</strong> +91 8920556818</p>
+        <p><strong>Email:</strong> townjamamasjid@gmail.com</p>
+        
+        <!-- Simple Map Placeholder -->
+        <div class="map-container">
+            <h4>Our Location</h4>
+            <div class="map-placeholder">
+                <p>📍 Map will be displayed here</p>
+                <p><small>You can add Google Maps embed code later</small></p>
+                <a href="https://maps.google.com/?q=Town+Jama+Masjid+Rahiman+Nagar+Jaigaon+West+Bengal" 
+                   target="_blank" class="cta-button" style="padding: 8px 16px; font-size: 0.9rem;">
+                    View on Google Maps
+                </a>
             </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>Town Jama Masjid</h3>
-                    <p>Rahiman Nagar, Jaigaon, West Bengal 736182</p>
-                    <p>+91 8920556818</p>
-                    <p>townjamamasjid@gmail.com</p>
-                </div>
-                <div class="footer-links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#prayer-times">Prayer Times</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#madrasa">Madrasa</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
-                <p>&copy; 2024 Town Jama Masjid. All rights reserved.</p>
+        
+        <h3 style="margin-top: 30px;">Prayer Times</h3>
+        <p><strong>Fajr:</strong> 4:55 AM | <strong>Dhuhr:</strong> 1:15 PM</p>
+        <p><strong>Asr:</strong> 4:00 PM | <strong>Maghrib:</strong> 5:25 PM</p>
+        <p><strong>Isha:</strong> 8:15 PM | <strong>Jumu'ah:</strong> 1:00 PM</p>
+    </div>
+    <div class="contact-form">
+        <h3>Send Us a Message</h3>
+        <form id="contactForm">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="tel" placeholder="Your Phone">
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</div>
+    
+<!-- In your footer section, replace the current footer-content with this: -->
+<div class="footer-content">
+    <div class="footer-info">
+        <h3>Town Jama Masjid</h3>
+        <p>Rahiman Nagar, Jaigaon, West Bengal 736182</p>
+        <p>+91 8920556818</p>
+        <p>townjamamasjid@gmail.com</p>
+        
+        <!-- Social Links -->
+        <div class="footer-social">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
-    </footer>
-
+    </div>
+    <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#prayer-times">Prayer Times</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#madrasa">Madrasa</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</div>
+    
     <script>
         // Simple form handler
         document.getElementById('contactForm').addEventListener('submit', function(e) {
