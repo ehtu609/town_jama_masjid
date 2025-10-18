@@ -4,20 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Town Jama Masjid - Islamic Center</title>
-    <!-- <style>
-        /* Basic CSS to make it work immediately */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; line-height: 1.6; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .dev-banner { background: #ff4444; color: white; text-align: center; padding: 10px; position: fixed; top: 0; width: 100%; z-index: 1000; }
-        header { background: #2c5e1a; color: white; padding: 1rem 0; margin-top: 40px; }
-        .announcement-bar { background: #f8f8f8; padding: 10px 0; border-bottom: 1px solid #ddd; }
-        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 30px; }
-        .service-item { text-align: center; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
-        .image-placeholder { background: #f0f0f0; height: 200px; display: flex; align-items: center; justify-content: center; color: #666; border-radius: 5px; }
-    </style> -->
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- EmailJS CDN for contact form functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
+<body>
+    <!-- Development Banner - Fixed at top -->
+    <div class="dev-banner">
+        🕌 Website Under Development - Coming Soon! 🕌
+    </div>
+
+    <!-- Header with navigation -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>TOWN JAMA MASJID</h1>
+                <p>RAHIMAN NAGAR, JAIGAON</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#prayer-times">Prayer Times</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#madrasa">Madrasa</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
 <body>
     <!-- Development Banner -->
     <div class="dev-banner">
@@ -25,7 +43,7 @@
     </div>
 
     <!-- Header -->
-    <header>
+    <!-- <header>
         <div class="container">
             <div class="logo">
                 <h1>TOWN JAMA MASJID</h1>
@@ -42,7 +60,7 @@
                 </ul>
             </nav>
         </div>
-    </header>
+    </header> -->
 
     <!-- Announcement Bar - FIXED: Removed Quran Classes -->
     <div class="announcement-bar">
@@ -144,27 +162,157 @@
         </div>
     </section>
 
-    <!-- Madrasa Section -->
-    <section id="madrasa" class="madrasa">
-        <div class="container">
-            <h2>Madrasa Education</h2>
-            <p>Providing quality Islamic education for all age groups with qualified teachers and structured curriculum.</p>
+          <!-- Age Groups and Programs -->
+            <div class="age-groups">
+                <h3>Programs by Age Group</h3>
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <h4>Kids Program (5-8 years)</h4>
+                        <ul>
+                            <li>Basic Quran Reading</li>
+                            <li>Islamic Manners</li>
+                            <li>Short Surahs Memorization</li>
+                            <li>Islamic Stories</li>
+                        </ul>
+                        <p class="timing"><strong>Timing:</strong> 4:00 PM - 5:30 PM</p>
+                    </div>
+                    
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h4>Junior Program (9-12 years)</h4>
+                        <ul>
+                            <li>Quran with Tajweed</li>
+                            <li>Fiqh Basics</li>
+                            <li>Seerah Studies</li>
+                            <li>Islamic History</li>
+                        </ul>
+                        <p class="timing"><strong>Timing:</strong> 5:30 PM - 7:00 PM</p>
+                    </div>
+                    
+                    <!-- <div class="program-card">
+                        <div class="program-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Youth Program (13-17 years)</h4>
+                        <ul>
+                            <li>Advanced Tajweed</li>
+                            <li>Islamic Jurisprudence</li>
+                            <li>Quran Memorization</li>
+                            <li>Arabic Language</li>
+                        </ul>
+                        <p class="timing"><strong>Timing:</strong> 7:00 PM - 8:30 PM</p>
+                    </div> -->
+                    
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h4>Adult Program (18+ years)</h4>
+                        <ul>
+                            <li>Quran Tafseer</li>
+                            <li>Advanced Fiqh</li>
+                            <li>Hadith Studies</li>
+                            <li>Islamic Finance</li>
+                        </ul>
+                        <p class="timing"><strong>Timing:</strong> Weekends: 9:00 AM - 11:00 AM</p>
+                    </div>
+                </div>
+            </div>
             
-            <div style="margin: 40px 0;">
-                <h3>Our Madrasa Environment</h3>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px;">
-                    <div>
-                        <div class="image-placeholder">[Classroom Image]</div>
-                        <p style="text-align: center; margin-top: 10px;">Classroom Environment</p>
+            <!-- Teachers Section -->
+            <div class="teachers-section">
+                <h3>Our Qualified Teachers</h3>
+                <div class="teachers-grid">
+                    <div class="teacher-card">
+                        <div class="teacher-image">
+                            <img src="images/teacher1.jpg" alt="Ehtesham Ahmed">
+                        </div>
+                        <div class="teacher-info">
+                            <h4>Maulana Ahmed Hussain</h4>
+                            <p class="teacher-qualification">Alim Degree, Darul Uloom Deoband</p>
+                            <p class="teacher-subject"><strong>Subjects:</strong> Quran Tajweed, Fiqh, Arabic</p>
+                            <p class="teacher-experience">5+ years teaching experience</p>
+                        </div>
                     </div>
-                    <div>
-                        <div class="image-placeholder">[Students Image]</div>
-                        <p style="text-align: center; margin-top: 10px;">Students Learning</p>
+                    
+                    <div class="teacher-card">
+                        <div class="teacher-image">
+                            <img src="images/teacher2.jpg" alt="Hafiz Mohammed">
+                        </div>
+                        <div class="teacher-info">
+                            <h4>Hafiz Mohammed Ali</h4>
+                            <p class="teacher-qualification">Hafiz-e-Quran, Qari Certification</p>
+                            <p class="teacher-subject"><strong>Subjects:</strong> Quran Memorization, Tajweed</p>
+                            <p class="teacher-experience">10+ years teaching experience</p>
+                        </div>
                     </div>
-                    <div>
-                        <div class="image-placeholder">[Library Image]</div>
-                        <p style="text-align: center; margin-top: 10px;">Islamic Library</p>
+                    
+                    <div class="teacher-card">
+                        <div class="teacher-image">
+                            <img src="images/teacher3.jpg" alt="Ustadha Fatima">
+                        </div>
+                        <div class="teacher-info">
+                            <h4>Ustadha Fatima Khan</h4>
+                            <p class="teacher-qualification">Islamic Studies, Alimah Course</p>
+                            <p class="teacher-subject"><strong>Subjects:</strong> Islamic Studies, Seerah, Women's Program</p>
+                            <p class="teacher-experience">8+ years teaching experience</p>
+                        </div>
                     </div>
+                </div>
+            </div>
+            
+            <!-- Class Schedule -->
+            <div class="class-schedule">
+                <h3>Weekly Class Schedule</h3>
+                <div class="schedule-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Day</th>
+                                <th>Kids Program</th>
+                                <th>Junior Program</th>
+                                <!-- <th>Youth Program</th> -->
+                                <th>Adult Program</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Monday - Friday</td>
+                                <td>4:00 PM - 5:30 PM</td>
+                                <td>5:30 PM - 7:00 PM</td>
+                                <td>7:00 PM - 8:30 PM</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>Saturday</td>
+                                <td>9:00 AM - 10:30 AM</td>
+                                <td>10:30 AM - 12:00 PM</td>
+                                <td>2:00 PM - 3:30 PM</td>
+                                <td>9:00 AM - 11:00 AM</td>
+                            </tr>
+                            <tr>
+                                <td>Sunday</td>
+                                <td>9:00 AM - 10:30 AM</td>
+                                <td>10:30 AM - 12:00 PM</td>
+                                <td>2:00 PM - 3:30 PM</td>
+                                <td>9:00 AM - 11:00 AM</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Registration CTA -->
+            <div class="registration-cta">
+                <div class="cta-content">
+                    <h3>Enroll Your Child Today</h3>
+                    <p>Give your child the gift of Islamic knowledge and spiritual growth</p>
+                    <button class="cta-button" onclick="openRegistrationForm()">Register Now</button>
                 </div>
             </div>
         </div>
