@@ -184,6 +184,23 @@ function calculatePrayerTimes() {
     }
 }
 
+function testEmailJSSetup() {
+    console.log('Testing EmailJS configuration...');
+    console.log('Public Key:', 'pi8Au8y-sgqaRjOEo');
+    console.log('Service ID:', 'service_sunf15q');
+    console.log('Template ID:', 'template_iirfx9j');
+    
+    // Test if EmailJS is properly initialized
+    if (typeof emailjs !== 'undefined') {
+        console.log('✅ EmailJS SDK loaded successfully');
+    } else {
+        console.error('❌ EmailJS SDK not loaded');
+    }
+}
+
+// Call this function to test
+testEmailJSSetup();
+
 /**
  * FUTURE ENHANCEMENTS:
  * 1. Real prayer times API integration
@@ -192,3 +209,4 @@ function calculatePrayerTimes() {
  * 4. Donation system
  * 5. Live prayer times based on location
  */
+
