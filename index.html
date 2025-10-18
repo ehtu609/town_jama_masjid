@@ -291,33 +291,111 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Contact Us</h2>
+            <h2>Get In Touch</h2>
             <div class="contact-grid">
+                
+                <!-- Left Column: Contact Info & Map -->
                 <div class="contact-info">
                     <h3>Visit Our Masjid</h3>
-                    <p><strong>Address:</strong> Town Jama Masjid, Rahiman Nagar, Jaigaon, West Bengal 736182, India</p>
-                    <p><strong>Phone:</strong> +91 8920556818</p>
-                    <p><strong>Email:</strong> townjamamasjid@gmail.com</p>
                     
-                    <h3 style="margin-top: 30px;">Prayer Times</h3>
-                    <p><strong>Fajr:</strong> 4:55 AM | <strong>Dhuhr:</strong> 1:15 PM</p>
-                    <p><strong>Asr:</strong> 4:00 PM | <strong>Maghrib:</strong> 5:25 PM</p>
-                    <p><strong>Isha:</strong> 8:15 PM | <strong>Jumu'ah:</strong> 1:00 PM</p>
+                    <div class="contact-details">
+                        <div class="contact-detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p><strong>Address:</strong><br>Town Jama Masjid, Rahiman Nagar,<br>Jaigaon, West Bengal 736182, India</p>
+                        </div>
+                        <div class="contact-detail-item">
+                            <i class="fas fa-phone"></i>
+                            <p><strong>Phone:</strong><br>+91 8920556818</p>
+                        </div>
+                        <div class="contact-detail-item">
+                            <i class="fas fa-envelope"></i>
+                            <p><strong>Email:</strong><br>townjamamasjid@gmail.com</p>
+                        </div>
+                    </div>
+    
+                    <!-- Prayer Times in Contact Section -->
+                    <div class="contact-prayer-times">
+                        <h4><i class="fas fa-clock"></i> Prayer Times</h4>
+                        <div class="prayer-times-grid">
+                            <div class="prayer-time-item">
+                                <span class="prayer-name">Fajr</span>
+                                <span class="prayer-time">4:55 AM</span>
+                            </div>
+                            <div class="prayer-time-item">
+                                <span class="prayer-name">Dhuhr</span>
+                                <span class="prayer-time">1:15 PM</span>
+                            </div>
+                            <div class="prayer-time-item">
+                                <span class="prayer-name">Asr</span>
+                                <span class="prayer-time">4:00 PM</span>
+                            </div>
+                            <div class="prayer-time-item">
+                                <span class="prayer-name">Maghrib</span>
+                                <span class="prayer-time">5:25 PM</span>
+                            </div>
+                            <div class="prayer-time-item">
+                                <span class="prayer-name">Isha</span>
+                                <span class="prayer-time">8:15 PM</span>
+                            </div>
+                            <div class="prayer-time-item">
+                                <span class="prayer-name">Jumu'ah</span>
+                                <span class="prayer-time">1:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Map Section -->
+                    <div class="map-container">
+                        <h4><i class="fas fa-map"></i> Our Location</h4>
+                        <div class="map-placeholder">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <p>📍 Interactive map will be displayed here</p>
+                            <p><small>You can add Google Maps embed code for exact location</small></p>
+                            <a href="https://maps.google.com/?q=Town+Jama+Masjid+Rahiman+Nagar+Jaigaon+West+Bengal" 
+                               target="_blank" class="cta-button" style="padding: 10px 20px; font-size: 0.9rem; margin-top: 10px;">
+                                <i class="fas fa-external-link-alt"></i> View on Google Maps
+                            </a>
+                        </div>
+                    </div>
+    
+                    <!-- Social Links -->
+                    <div class="contact-social">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
                 </div>
-                <div class="contact-form">
-                    <h3>Send Us a Message</h3>
-                    <form id="contactForm">
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <input type="tel" placeholder="Your Phone">
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
-                        <button type="submit">Send Message</button>
-                    </form>
+    
+                <!-- Right Column: Contact Form -->
+                <div class="contact-column">
+                    <div class="contact-form">
+                        <h3>Send Us a Message</h3>
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Your Full Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Your Email Address" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" name="phone" placeholder="Your Phone Number (Optional)">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" placeholder="Type your message here..." rows="5" required></textarea>
+                            </div>
+                            <button type="submit" id="submit-btn">Send Message</button>
+                            <div id="form-messages"></div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
+    
     <!-- Footer -->
     <footer>
         <div class="container">
