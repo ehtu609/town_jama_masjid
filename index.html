@@ -52,15 +52,19 @@
         </div>
     </div>
 
-    <!-- Hero Section -->
+<!-- Hero Section with single image (no carousel) -->
     <section id="home" class="hero">
-        <div class="container">
-            <div class="image-placeholder">
-                [Hero Image - To be added later]
-            </div>
-            <div style="text-align: center; padding: 40px 0;">
-                <h2>Welcome to Our Masjid</h2>
-                <p>A place of worship, community, and spiritual growth</p>
+        <div class="carousel">
+            <div class="carousel-slides">
+                <!-- Single static hero image -->
+                <div class="carousel-slide active">
+                    <img src="images/hero1.jpg" alt="Masjid Exterior">
+                    <div class="carousel-content">
+                        <h2>Welcome to Our Masjid</h2>
+                        <p>A place of worship, community, and spiritual growth</p>
+                        <button class="cta-button">Learn More</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -103,17 +107,18 @@
     <section id="about" class="about">
         <div class="container">
             <h2>About Our Masjid</h2>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-top: 30px;">
-                <div>
+            <div class="about-content">
+                <div class="about-text">
                     <p>Established in 1968, Town Jama Masjid has been the spiritual heart of Rahiman Nagar and Jaigaon for over five decades.</p>
                     <p>Our mission is to serve the Muslim community through religious guidance, educational programs, and social services.</p>
                 </div>
-                <div class="image-placeholder">
-                    [Masjid Image - To be added later]
+                <div class="about-image">
+                    <img src="images/masjid-exterior.jpg" alt="Town Jama Masjid Exterior">
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Services Section - FIXED: Removed Quran Classes and Islamic Education -->
     <section id="services" class="services">
