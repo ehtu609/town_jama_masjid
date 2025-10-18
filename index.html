@@ -4,18 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Town Jama Masjid - Islamic Center</title>
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Basic CSS to make it work immediately */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .dev-banner { background: #ff4444; color: white; text-align: center; padding: 10px; position: fixed; top: 0; width: 100%; z-index: 1000; }
+        header { background: #2c5e1a; color: white; padding: 1rem 0; margin-top: 40px; }
+        .announcement-bar { background: #f8f8f8; padding: 10px 0; border-bottom: 1px solid #ddd; }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 30px; }
+        .service-item { text-align: center; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        .image-placeholder { background: #f0f0f0; height: 200px; display: flex; align-items: center; justify-content: center; color: #666; border-radius: 5px; }
+    </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <!-- EmailJS CDN for contact form functionality -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
-    <!-- Development Banner - Fixed at top -->
+    <!-- Development Banner -->
     <div class="dev-banner">
         🕌 Website Under Development - Coming Soon! 🕌
     </div>
 
-    <!-- Header with navigation -->
+    <!-- Header -->
     <header>
         <div class="container">
             <div class="logo">
@@ -29,134 +38,100 @@
                     <li><a href="#prayer-times">Prayer Times</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#madrasa">Madrasa</a></li>
-                    <li><a href="#events">Events</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Scrolling announcement banner -->
+    <!-- Announcement Bar - FIXED: Removed Quran Classes -->
     <div class="announcement-bar">
         <div class="announcement-content">
             <div class="announcement-item">🕌 <strong>Next Jumu'ah Prayer:</strong> 1:00 PM</div>
-            <!-- REMOVED: Quran Classes announcement -->
             <div class="announcement-item">🌙 <strong>Eid ul Fitr:</strong> Expected February 28, 2026</div>
         </div>
     </div>
-    
-    <!-- Hero Section with single image (no carousel) -->
+
+    <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="carousel">
-            <div class="carousel-slides">
-                <!-- Single static hero image -->
-                <div class="carousel-slide active">
-                    <!-- TEMPORARY: Blank image section with placeholder text -->
-                    <div style="background-color: #f0f0f0; height: 400px; display: flex; align-items: center; justify-content: center;">
-                        <p style="color: #666; font-size: 18px;">[Hero Image Placeholder - To be added later]</p>
-                    </div>
-                    <div class="carousel-content">
-                        <h2>Welcome to Our Masjid</h2>
-                        <p>A place of worship, community, and spiritual growth</p>
-                        <button class="cta-button">Learn More</button>
-                    </div>
-                </div>
+        <div class="container">
+            <div class="image-placeholder">
+                [Hero Image - To be added later]
+            </div>
+            <div style="text-align: center; padding: 40px 0;">
+                <h2>Welcome to Our Masjid</h2>
+                <p>A place of worship, community, and spiritual growth</p>
             </div>
         </div>
     </section>
-    
-    <!-- Prayer Times Section -->
+
+    <!-- Prayer Times -->
     <section id="prayer-times" class="prayer-times">
         <div class="container">
             <h2>Today's Prayer Times</h2>
-            <div class="prayer-grid">
-                <div class="prayer-item">
+            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; margin-top: 20px;">
+                <div style="border: 1px solid #ddd; padding: 15px; text-align: center;">
                     <h3>Fajr</h3>
-                    <p class="azaan-time">Azaan: 4:25 AM</p>
-                    <p class="jamaat-time">Jama'at: 4:55 AM</p>
+                    <p>Azaan: 4:25 AM</p>
+                    <p>Jama'at: 4:55 AM</p>
                 </div>
-                <div class="prayer-item">
+                <div style="border: 1px solid #ddd; padding: 15px; text-align: center;">
                     <h3>Dhuhr</h3>
-                    <p class="azaan-time">Azaan: 12:45 PM</p>
-                    <p class="jamaat-time">Jama'at: 01:15 PM</p>
+                    <p>Azaan: 12:45 PM</p>
+                    <p>Jama'at: 1:15 PM</p>
                 </div>
-                <div class="prayer-item">
+                <div style="border: 1px solid #ddd; padding: 15px; text-align: center;">
                     <h3>Asr</h3>
-                    <p class="azaan-time">Azaan: 3:45 PM</p>
-                    <p class="jamaat-time">Jama'at: 4:00 PM</p>
+                    <p>Azaan: 3:45 PM</p>
+                    <p>Jama'at: 4:00 PM</p>
                 </div>
-                <div class="prayer-item">
+                <div style="border: 1px solid #ddd; padding: 15px; text-align: center;">
                     <h3>Maghrib</h3>
-                    <p class="azaan-time">Azaan: 5:22 PM</p>
-                    <p class="jamaat-time">Jama'at: 5:25 PM</p>
+                    <p>Azaan: 5:22 PM</p>
+                    <p>Jama'at: 5:25 PM</p>
                 </div>
-                <div class="prayer-item">
+                <div style="border: 1px solid #ddd; padding: 15px; text-align: center;">
                     <h3>Isha</h3>
-                    <p class="azaan-time">Azaan: 7:45 PM</p>
-                    <p class="jamaat-time">Jama'at: 8:15 PM</p>
-                </div>
-            </div>
-            
-            <!-- Friday Prayer Timing -->
-            <div class="friday-timing">
-                <div class="prayer-item friday-item">
-                    <h3>📅 Friday Prayer (Jumu'ah)</h3>
-                    <p class="azaan-time">Khutbah Start: 12:30 PM</p>
-                    <p class="jamaat-time">Jama'at: 1:00 PM</p>
+                    <p>Azaan: 7:45 PM</p>
+                    <p>Jama'at: 8:15 PM</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Prayer Times Calculator -->
-    <section class="prayer-calculator">
-        <div class="container">
-            <h2>Prayer Times Calculator</h2>
-            <div class="calculator-form">
-                <input type="date" id="prayer-date" class="date-input">
-                <button onclick="calculatePrayerTimes()" class="calc-btn">Get Prayer Times</button>
-            </div>
-            <div id="calculated-times" class="calculated-times"></div>
-        </div>
-    </section>
-    
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
             <h2>About Our Masjid</h2>
-            <div class="about-content">
-                <div class="about-text">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-top: 30px;">
+                <div>
                     <p>Established in 1968, Town Jama Masjid has been the spiritual heart of Rahiman Nagar and Jaigaon for over five decades.</p>
                     <p>Our mission is to serve the Muslim community through religious guidance, educational programs, and social services.</p>
                 </div>
-                <div class="about-image">
-                    <!-- TEMPORARY: Blank image section -->
-                    <div style="background-color: #f0f0f0; height: 300px; display: flex; align-items: center; justify-content: center; border-radius: 10px;">
-                        <p style="color: #666;">[Masjid Image Placeholder]</p>
-                    </div>
+                <div class="image-placeholder">
+                    [Masjid Image - To be added later]
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section - UPDATED -->
+    <!-- Services Section - FIXED: Removed Quran Classes and Islamic Education -->
     <section id="services" class="services">
         <div class="container">
             <h2>Our Services</h2>
             <div class="services-grid">
-                <!-- REMOVED: Quran Classes and Islamic Education services -->
                 <div class="service-item">
-                    <i class="fas fa-mosque"></i>
+                    <i class="fas fa-mosque" style="font-size: 2rem; color: #2c5e1a; margin-bottom: 15px;"></i>
                     <h3>Five Daily Prayers</h3>
                     <p>Regular congregational prayers</p>
                 </div>
                 <div class="service-item">
-                    <i class="fas fa-hand-holding-heart"></i>
+                    <i class="fas fa-hand-holding-heart" style="font-size: 2rem; color: #2c5e1a; margin-bottom: 15px;"></i>
                     <h3>Community Support</h3>
                     <p>Social and community services</p>
                 </div>
                 <div class="service-item">
-                    <i class="fas fa-umbrella-beach"></i>
+                    <i class="fas fa-umbrella-beach" style="font-size: 2rem; color: #2c5e1a; margin-bottom: 15px;"></i>
                     <h3>Janazah Services</h3>
                     <p>Funeral and burial arrangements</p>
                 </div>
@@ -168,196 +143,23 @@
     <section id="madrasa" class="madrasa">
         <div class="container">
             <h2>Madrasa Education</h2>
-            <p class="section-intro">Providing quality Islamic education for all age groups with qualified teachers and structured curriculum.</p>
+            <p>Providing quality Islamic education for all age groups with qualified teachers and structured curriculum.</p>
             
-            <!-- Image Gallery -->
-            <div class="madrasa-gallery">
+            <div style="margin: 40px 0;">
                 <h3>Our Madrasa Environment</h3>
-                <div class="gallery-container">
-                    <div class="gallery-item">
-                        <!-- TEMPORARY: Blank image -->
-                        <div style="background-color: #f0f0f0; height: 200px; display: flex; align-items: center; justify-content: center;">
-                            <p style="color: #666;">[Classroom Image]</p>
-                        </div>
-                        <div class="gallery-caption">Classroom Environment</div>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px;">
+                    <div>
+                        <div class="image-placeholder">[Classroom Image]</div>
+                        <p style="text-align: center; margin-top: 10px;">Classroom Environment</p>
                     </div>
-                    <div class="gallery-item">
-                        <!-- TEMPORARY: Blank image -->
-                        <div style="background-color: #f0f0f0; height: 200px; display: flex; align-items: center; justify-content: center;">
-                            <p style="color: #666;">[Students Image]</p>
-                        </div>
-                        <div class="gallery-caption">Students Learning</div>
+                    <div>
+                        <div class="image-placeholder">[Students Image]</div>
+                        <p style="text-align: center; margin-top: 10px;">Students Learning</p>
                     </div>
-                    <div class="gallery-item">
-                        <!-- TEMPORARY: Blank image -->
-                        <div style="background-color: #f0f0f0; height: 200px; display: flex; align-items: center; justify-content: center;">
-                            <p style="color: #666;">[Library Image]</p>
-                        </div>
-                        <div class="gallery-caption">Islamic Library</div>
+                    <div>
+                        <div class="image-placeholder">[Library Image]</div>
+                        <p style="text-align: center; margin-top: 10px;">Islamic Library</p>
                     </div>
-                </div>
-            </div>
-            
-            <!-- Age Groups and Programs -->
-            <div class="age-groups">
-                <h3>Programs by Age Group</h3>
-                <div class="programs-grid">
-                    <div class="program-card">
-                        <div class="program-icon">
-                            <i class="fas fa-child"></i>
-                        </div>
-                        <h4>Kids Program (5-8 years)</h4>
-                        <ul>
-                            <li>Basic Quran Reading</li>
-                            <li>Islamic Manners</li>
-                            <li>Short Surahs Memorization</li>
-                            <li>Islamic Stories</li>
-                        </ul>
-                        <p class="timing"><strong>Timing:</strong> 4:00 PM - 5:30 PM</p>
-                    </div>
-                    
-                    <div class="program-card">
-                        <div class="program-icon">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <h4>Junior Program (9-12 years)</h4>
-                        <ul>
-                            <li>Quran with Tajweed</li>
-                            <li>Fiqh Basics</li>
-                            <li>Seerah Studies</li>
-                            <li>Islamic History</li>
-                        </ul>
-                        <p class="timing"><strong>Timing:</strong> 5:30 PM - 7:00 PM</p>
-                    </div>
-                    
-                    <div class="program-card">
-                        <div class="program-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h4>Youth Program (13-17 years)</h4>
-                        <ul>
-                            <li>Advanced Tajweed</li>
-                            <li>Islamic Jurisprudence</li>
-                            <li>Quran Memorization</li>
-                            <li>Arabic Language</li>
-                        </ul>
-                        <p class="timing"><strong>Timing:</strong> 7:00 PM - 8:30 PM</p>
-                    </div>
-                    
-                    <div class="program-card">
-                        <div class="program-icon">
-                            <i class="fas fa-chalkboard-teacher"></i>
-                        </div>
-                        <h4>Adult Program (18+ years)</h4>
-                        <ul>
-                            <li>Quran Tafseer</li>
-                            <li>Advanced Fiqh</li>
-                            <li>Hadith Studies</li>
-                            <li>Islamic Finance</li>
-                        </ul>
-                        <p class="timing"><strong>Timing:</strong> Weekends: 9:00 AM - 11:00 AM</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Teachers Section -->
-            <div class="teachers-section">
-                <h3>Our Qualified Teachers</h3>
-                <div class="teachers-grid">
-                    <div class="teacher-card">
-                        <div class="teacher-image">
-                            <!-- TEMPORARY: Blank teacher image -->
-                            <div style="background-color: #f0f0f0; height: 150px; display: flex; align-items: center; justify-content: center; border-radius: 10px;">
-                                <p style="color: #666;">[Teacher Photo]</p>
-                            </div>
-                        </div>
-                        <div class="teacher-info">
-                            <h4>Maulana Ahmed Hussain</h4>
-                            <p class="teacher-qualification">Alim Degree, Darul Uloom Deoband</p>
-                            <p class="teacher-subject"><strong>Subjects:</strong> Quran Tajweed, Fiqh, Arabic</p>
-                            <p class="teacher-experience">15+ years teaching experience</p>
-                        </div>
-                    </div>
-                    
-                    <div class="teacher-card">
-                        <div class="teacher-image">
-                            <!-- TEMPORARY: Blank teacher image -->
-                            <div style="background-color: #f0f0f0; height: 150px; display: flex; align-items: center; justify-content: center; border-radius: 10px;">
-                                <p style="color: #666;">[Teacher Photo]</p>
-                            </div>
-                        </div>
-                        <div class="teacher-info">
-                            <h4>Hafiz Mohammed Ali</h4>
-                            <p class="teacher-qualification">Hafiz-e-Quran, Qari Certification</p>
-                            <p class="teacher-subject"><strong>Subjects:</strong> Quran Memorization, Tajweed</p>
-                            <p class="teacher-experience">10+ years teaching experience</p>
-                        </div>
-                    </div>
-                    
-                    <div class="teacher-card">
-                        <div class="teacher-image">
-                            <!-- TEMPORARY: Blank teacher image -->
-                            <div style="background-color: #f0f0f0; height: 150px; display: flex; align-items: center; justify-content: center; border-radius: 10px;">
-                                <p style="color: #666;">[Teacher Photo]</p>
-                            </div>
-                        </div>
-                        <div class="teacher-info">
-                            <h4>Ustadha Fatima Khan</h4>
-                            <p class="teacher-qualification">Islamic Studies, Alimah Course</p>
-                            <p class="teacher-subject"><strong>Subjects:</strong> Islamic Studies, Seerah, Women's Program</p>
-                            <p class="teacher-experience">8+ years teaching experience</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Class Schedule -->
-            <div class="class-schedule">
-                <h3>Weekly Class Schedule</h3>
-                <div class="schedule-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Day</th>
-                                <th>Kids Program</th>
-                                <th>Junior Program</th>
-                                <th>Youth Program</th>
-                                <th>Adult Program</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Monday - Friday</td>
-                                <td>4:00 PM - 5:30 PM</td>
-                                <td>5:30 PM - 7:00 PM</td>
-                                <td>7:00 PM - 8:30 PM</td>
-                                <td>-</td>
-                            </tr>
-                            <tr>
-                                <td>Saturday</td>
-                                <td>9:00 AM - 10:30 AM</td>
-                                <td>10:30 AM - 12:00 PM</td>
-                                <td>2:00 PM - 3:30 PM</td>
-                                <td>9:00 AM - 11:00 AM</td>
-                            </tr>
-                            <tr>
-                                <td>Sunday</td>
-                                <td>9:00 AM - 10:30 AM</td>
-                                <td>10:30 AM - 12:00 PM</td>
-                                <td>2:00 PM - 3:30 PM</td>
-                                <td>9:00 AM - 11:00 AM</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            
-            <!-- Registration CTA -->
-            <div class="registration-cta">
-                <div class="cta-content">
-                    <h3>Enroll Your Child Today</h3>
-                    <p>Give your child the gift of Islamic knowledge and spiritual growth</p>
-                    <button class="cta-button" onclick="openRegistrationForm()">Register Now</button>
                 </div>
             </div>
         </div>
@@ -367,113 +169,48 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2>Contact Us</h2>
-            <div class="contact-content">
-                <!-- Left Column: Contact Info & Map -->
-                <div class="contact-column">
-                    <div class="contact-info">
-                        <h3>Visit Our Masjid</h3>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>Address</h4>
-                                <p>Town Jama Masjid<br>Rahiman Nagar, Jaigaon<br>West Bengal 736182, India</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4>Phone</h4>
-                                <p>+91 8920556818</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>Email</h4>
-                                <p>townjamamasjid@gmail.com</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Map Section -->
-                    <div class="map-container">
-                        <h3>Our Location</h3>
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.347284331918!2d89.37511431504206!3d26.83643708316434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e3a3b4b4b4b4b4%3A0x3b3b3b3b3b3b3b3b!2sJaigaon%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
-                            width="100%" 
-                            height="300" 
-                            style="border:0; border-radius: 10px;" 
-                            allowfullscreen="" 
-                            loading="lazy">
-                        </iframe>
-                    </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 30px;">
+                <div>
+                    <h3>Visit Our Masjid</h3>
+                    <p><strong>Address:</strong> Town Jama Masjid, Rahiman Nagar, Jaigaon, West Bengal 736182, India</p>
+                    <p><strong>Phone:</strong> +91 8920556818</p>
+                    <p><strong>Email:</strong> townjamamasjid@gmail.com</p>
                 </div>
-
-                <!-- Right Column: Contact Form -->
-                <div class="contact-column">
-                    <div class="contact-form">
-                        <h3>Send Us a Message</h3>
-                        <form id="contact-form">
-                            <div class="form-group">
-                                <input type="text" name="name" placeholder="Your Full Name" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" name="email" placeholder="Your Email Address" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="tel" name="phone" placeholder="Your Phone Number (Optional)">
-                            </div>
-                            <div class="form-group">
-                                <textarea name="message" placeholder="Type your message here..." rows="5" required></textarea>
-                            </div>
-                            <button type="submit" id="submit-btn">Send Message</button>
-                            <div id="form-messages"></div>
-                        </form>
-                    </div>
+                <div>
+                    <h3>Send Us a Message</h3>
+                    <form>
+                        <input type="text" placeholder="Your Name" style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ddd;">
+                        <input type="email" placeholder="Your Email" style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ddd;">
+                        <textarea placeholder="Your Message" style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ddd; height: 100px;"></textarea>
+                        <button type="submit" style="background: #2c5e1a; color: white; padding: 10px 20px; border: none; border-radius: 5px;">Send Message</button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Footer -->
-    <footer>
+    <footer style="background: #333; color: white; padding: 40px 0; margin-top: 40px;">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                <div>
                     <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Rahiman Nagar, Jaigaon</p>
-                    <p><i class="fas fa-phone"></i> +91 8920556818</p>
-                    <p><i class="fas fa-envelope"></i> townjamamasjid@gmail.com</p>
-                    
-                    <div class="social-links">
-                        <a href="https://www.youtube.com/@TownJamaMasjid" target="_blank" class="social-icon">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="https://www.facebook.com/profile.php?id=61581454354671" target="_blank" class="social-icon">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="https://wa.me/8920556818" target="_blank" class="social-icon">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                    </div>
+                    <p>Rahiman Nagar, Jaigaon</p>
+                    <p>+91 8920556818</p>
+                    <p>townjamamasjid@gmail.com</p>
                 </div>
-                <div class="footer-section">
+                <div>
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#prayer-times">Prayer Times</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#madrasa">Madrasa</a></li>
-                        <li><a href="#events">Events</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#home" style="color: white;">Home</a></li>
+                        <li><a href="#about" style="color: white;">About</a></li>
+                        <li><a href="#services" style="color: white;">Services</a></li>
+                        <li><a href="#madrasa" style="color: white;">Madrasa</a></li>
+                        <li><a href="#contact" style="color: white;">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </footer>
-
-    <!-- Main JavaScript File -->
-    <script src="js/script.js"></script>
 </body>
 </html>
