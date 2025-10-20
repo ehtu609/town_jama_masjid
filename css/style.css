@@ -1262,4 +1262,165 @@ button[type="submit"]:disabled {
     transform: none !important;
 }
 
+/* Islamic Calendar Section - Professional Design */
+.islamic-calendar {
+    background: #f8f9fa;
+    padding: 50px 0;
+    border-top: 1px solid #e9ecef;
+    border-bottom: 1px solid #e9ecef;
+}
 
+.islamic-calendar h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #2c5e1a;
+    font-size: 2.2rem;
+    font-weight: 300;
+    position: relative;
+}
+
+.islamic-calendar h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: #2c5e1a;
+}
+
+.calendar-iftar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.info-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f1f3f4;
+}
+
+.card-header i {
+    font-size: 1.5rem;
+    color: #2c5e1a;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #2c5e1a;
+    font-weight: 500;
+}
+
+.card-content {
+    font-size: 1rem;
+}
+
+.main-value {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #2c5e1a;
+    line-height: 1.2;
+}
+
+.sub-value {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.countdown {
+    font-size: 0.9rem;
+    background: #f8f9fa;
+    color: #2c5e1a;
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: 500;
+    border: 1px solid #e9ecef;
+}
+
+/* Status messages - subtle */
+.status-message {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .islamic-calendar {
+        padding: 40px 0;
+    }
+    
+    .islamic-calendar h2 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    
+    .calendar-iftar-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+    }
+    
+    .info-card {
+        padding: 20px;
+    }
+    
+    .main-value {
+        font-size: 1.6rem;
+    }
+    
+    .card-header {
+        gap: 10px;
+    }
+    
+    .card-header i {
+        font-size: 1.3rem;
+    }
+    
+    .card-header h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .islamic-calendar {
+        padding: 30px 0;
+    }
+    
+    .info-card {
+        padding: 18px 15px;
+    }
+    
+    .main-value {
+        font-size: 1.4rem;
+    }
+}
