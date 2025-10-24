@@ -1424,3 +1424,589 @@ button[type="submit"]:disabled {
         font-size: 1.4rem;
     }
 }
+
+.about-image img {
+    background: #f0f0f0;
+    min-height: 200px;
+}
+
+.prayer-card:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+}
+.footer-social {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    /* rest of your existing styles */
+}
+
+/* Improved Contact Section Layout */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Compact Map Styling */
+.real-map {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.real-map iframe {
+    display: block;
+    border: none;
+}
+
+.map-actions {
+    padding: 12px;
+    text-align: center;
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+}
+
+.map-link {
+    color: #2c5e1a;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+}
+
+.map-link:hover {
+    color: #4a7c2a;
+}
+
+/* Contact Info Section */
+.contact-info {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    height: fit-content;
+}
+
+/* Contact Form Section */
+.contact-column {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    height: fit-content;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .contact-info,
+    .contact-column {
+        padding: 25px;
+    }
+    
+    .real-map iframe {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-info,
+    .contact-column {
+        padding: 20px;
+    }
+    
+    .real-map iframe {
+        height: 200px;
+    }
+}
+
+/* Enhanced Hero Carousel */
+.hero {
+    position: relative;
+    height: 80vh;
+    min-height: 600px;
+    overflow: hidden;
+}
+
+.carousel {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-slides {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+/* About Us Slide Styling */
+.about-slide-content {
+    background: linear-gradient(135deg, #1a4721 0%, #2c5e1a 100%);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.about-text-slide {
+    max-width: 800px;
+    text-align: center;
+    color: white;
+}
+
+.about-text-slide h2 {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    color: #ffd700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.about-points {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.about-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    text-align: left;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.about-point:hover {
+    transform: translateY(-5px);
+}
+
+.about-point i {
+    font-size: 2rem;
+    color: #ffd700;
+    margin-top: 5px;
+    flex-shrink: 0;
+}
+
+.about-point h4 {
+    margin-bottom: 8px;
+    color: #ffd700;
+    font-size: 1.3rem;
+}
+
+.about-point p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Carousel Controls */
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-prev {
+    left: 20px;
+}
+
+.carousel-next {
+    right: 20px;
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+/* Carousel Content Styling */
+.carousel-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+    max-width: 800px;
+    width: 90%;
+}
+
+.carousel-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.carousel-content p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        height: 70vh;
+        min-height: 500px;
+    }
+    
+    .about-text-slide h2 {
+        font-size: 2.2rem;
+    }
+    
+    .about-points {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .about-point {
+        padding: 15px;
+    }
+    
+    .carousel-content h2 {
+        font-size: 2.5rem;
+    }
+    
+    .carousel-content p {
+        font-size: 1.1rem;
+    }
+    
+    .carousel-prev,
+    .carousel-next {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 60vh;
+        min-height: 400px;
+    }
+    
+    .about-text-slide h2 {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
+    
+    .about-point {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .carousel-content h2 {
+        font-size: 2rem;
+    }
+    
+    .carousel-content p {
+        font-size: 1rem;
+    }
+}
+
+/* Gallery Section */
+.gallery {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.gallery h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #2c5e1a;
+    font-size: 2.5rem;
+}
+
+.gallery-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    aspect-ratio: 4/3;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    transform: translateY(0);
+}
+
+.gallery-overlay h4 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.gallery-cta {
+    text-align: center;
+    padding: 40px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.gallery-cta p {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Responsive Gallery */
+@media (max-width: 768px) {
+    .gallery {
+        padding: 60px 0;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    
+    .gallery h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-cta {
+        padding: 30px 20px;
+    }
+}
+
+/* Madrasa Contact Info Section */
+.contact-info-madrasa {
+    background: linear-gradient(135deg, #2c5e1a, #4a7c2a);
+    color: white;
+    padding: 50px 40px;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 50px;
+    box-shadow: 0 10px 30px rgba(44, 94, 26, 0.3);
+}
+
+.contact-info-madrasa h3 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #ffd700;
+}
+
+.contact-info-madrasa > .contact-content > p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.contact-details {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.contact-details p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 25px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.contact-details p:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+.contact-details i {
+    color: #ffd700;
+    font-size: 1.2rem;
+    width: 20px;
+}
+
+/* Responsive Design for Madrasa Section */
+@media (max-width: 768px) {
+    .teachers-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info-madrasa {
+        padding: 40px 25px;
+    }
+    
+    .contact-details {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .contact-details p {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .contact-info-madrasa h3 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-info-madrasa {
+        padding: 30px 20px;
+    }
+    
+    .contact-info-madrasa h3 {
+        font-size: 1.6rem;
+    }
+    
+    .contact-details p {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+    
+    .programs-grid {
+        grid-template-columns: 1fr;
+    }
+}
