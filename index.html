@@ -24,18 +24,19 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#prayer-times">Prayer Times</a></li>
-                    <li><a href="#services">Services</a></li>
                     <li><a href="#madrasa">Madrasa</a></li>
+                    <li><a href="#services">Services</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
             
             <div class="social-links">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61581454354671" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/@TownJamaMasjid" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://wa.me/918920556818" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://x.com/JamaMasjid1968" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
             </div>
         </div>
     </header>
@@ -50,10 +51,11 @@
         </div>
     </div>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with About Us Carousel -->
     <section id="home" class="hero">
         <div class="carousel">
             <div class="carousel-slides">
+                <!-- Slide 1: Welcome -->
                 <div class="carousel-slide active">
                     <img src="images/hero1.jpg" alt="Masjid Exterior" onerror="this.style.display='none'">
                     <div class="carousel-content">
@@ -62,79 +64,144 @@
                         <a href="#about" class="cta-button">Learn More</a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Prayer Times -->
-    <section id="prayer-times" class="prayer-times">
-        <div class="container">
-            <h2>Today's Prayer Times</h2>
-            <div class="prayer-grid">
-                <div class="prayer-card">
-                    <h3>Fajr</h3>
-                    <p><strong>Azaan:</strong> 4:25 AM</p>
-                    <p><strong>Jama'at:</strong> 4:55 AM</p>
+                
+                <!-- Slide 2: About Us Text -->
+                <div class="carousel-slide">
+                    <div class="about-slide-content">
+                        <div class="about-text-slide">
+                            <h2>About Town Jama Masjid</h2>
+                            <div class="about-points">
+                                <div class="about-point">
+                                    <i class="fas fa-mosque"></i>
+                                    <div>
+                                        <h4>Established 1968</h4>
+                                        <p>Serving the community for over five decades</p>
+                                    </div>
+                                </div>
+                                <div class="about-point">
+                                    <i class="fas fa-heart"></i>
+                                    <div>
+                                        <h4>Spiritual Heart</h4>
+                                        <p>The center of Islamic life in Rahiman Nagar</p>
+                                    </div>
+                                </div>
+                                <div class="about-point">
+                                    <i class="fas fa-users"></i>
+                                    <div>
+                                        <h4>Community Focus</h4>
+                                        <p>Religious guidance, education, and social services</p>
+                                    </div>
+                                </div>
+                                <div class="about-point">
+                                    <i class="fas fa-hands-helping"></i>
+                                    <div>
+                                        <h4>Welcome Everyone</h4>
+                                        <p>Join us in prayers, learning, and community activities</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <a href="#about" class="cta-button">Our Full Story</a> -->
+                        </div>
+                    </div>
                 </div>
-                <div class="prayer-card">
-                    <h3>Dhuhr</h3>
-                    <p><strong>Azaan:</strong> 12:45 PM</p>
-                    <p><strong>Jama'at:</strong> 1:15 PM</p>
-                </div>
-                <div class="prayer-card">
-                    <h3>Asr</h3>
-                    <p><strong>Azaan:</strong> 3:45 PM</p>
-                    <p><strong>Jama'at:</strong> 4:00 PM</p>
-                </div>
-                <div class="prayer-card">
-                    <h3>Maghrib</h3>
-                    <p><strong>Azaan:</strong> 5:22 PM</p>
-                    <p><strong>Jama'at:</strong> 5:25 PM</p>
-                </div>
-                <div class="prayer-card">
-                    <h3>Isha</h3>
-                    <p><strong>Azaan:</strong> 7:45 PM</p>
-                    <p><strong>Jama'at:</strong> 8:15 PM</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<!-- Islamic Calendar & Iftar Timings -->
-<section id="islamic-calendar" class="islamic-calendar">
-    <div class="container">
-        <h2>Islamic Calendar & Timings</h2>
-        
-        <div class="calendar-iftar-grid">
-            <!-- Hijri Date -->
-            <div class="info-card">
-                <div class="card-header">
-                    <i class="fas fa-calendar-alt"></i>
-                    <h3>Islamic Date</h3>
-                </div>
-                <div class="card-content">
-                    <div class="main-value" id="hijri-date">28 Rabi al-thani 1447</div>
-                    <div class="sub-value" id="gregorian-date">20 November 2024</div>
+                
+                <!-- Slide 3: Masjid Image -->
+                <div class="carousel-slide">
+                    <img src="images/masjid-exterior.jpg" alt="Town Jama Masjid Building" onerror="this.style.display='none'">
+                    <div class="carousel-content">
+                        <h2>Our Beautiful Masjid</h2>
+                        <p>Historical building serving generations of Muslims</p>
+                        <a href="#gallery" class="cta-button">View Gallery</a>
+                    </div>
                 </div>
             </div>
             
-            <!-- Iftar Timings -->
-            <div class="info-card">
-                <div class="card-header">
-                    <i class="fas fa-moon"></i>
-                    <h3>Iftar Time</h3>
-                </div>
-                <div class="card-content">
-                    <div class="main-value" id="iftar-time">6:15 PM</div>
-                    <div class="sub-value">Jaigaon, West Bengal</div>
-                    <div class="countdown" id="time-remaining">Iftar in: 4h 22m</div>
-                </div>
+            <!-- Carousel Controls -->
+            <button class="carousel-prev" aria-label="Previous slide">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-next" aria-label="Next slide">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators">
+                <button class="indicator active" aria-label="Go to slide 1"></button>
+                <button class="indicator" aria-label="Go to slide 2"></button>
+                <button class="indicator" aria-label="Go to slide 3"></button>
             </div>
         </div>
-        
-    </div>
-</section>
-        
+    </section>
+
+        <!-- Prayer Times -->
+        <section id="prayer-times" class="prayer-times">
+            <div class="container">
+                <h2>Today's Prayer Times</h2>
+                <div class="prayer-grid">
+                    <div class="prayer-card">
+                        <h3>Fajr</h3>
+                        <p><strong>Azaan:</strong> 4:25 AM</p>
+                        <p><strong>Jama'at:</strong> 4:55 AM</p>
+                    </div>
+                    <div class="prayer-card">
+                        <h3>Dhuhr</h3>
+                        <p><strong>Azaan:</strong> 12:45 PM</p>
+                        <p><strong>Jama'at:</strong> 1:15 PM</p>
+                    </div>
+                    <div class="prayer-card">
+                        <h3>Asr</h3>
+                        <p><strong>Azaan:</strong> 3:45 PM</p>
+                        <p><strong>Jama'at:</strong> 4:00 PM</p>
+                    </div>
+                    <div class="prayer-card">
+                        <h3>Maghrib</h3>
+                        <p><strong>Azaan:</strong> 5:22 PM</p>
+                        <p><strong>Jama'at:</strong> 5:25 PM</p>
+                    </div>
+                    <div class="prayer-card">
+                        <h3>Isha</h3>
+                        <p><strong>Azaan:</strong> 7:45 PM</p>
+                        <p><strong>Jama'at:</strong> 8:15 PM</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Islamic Calendar & Iftar Timings -->
+    <section id="islamic-calendar" class="islamic-calendar">
+        <div class="container">
+            <h2>Islamic Calendar & Timings</h2>
+            
+            <div class="calendar-iftar-grid">
+                <!-- Hijri Date -->
+                <div class="info-card">
+                    <div class="card-header">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>Islamic Date</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="main-value" id="hijri-date">28 Rabi al-thani 1447</div>
+                        <div class="sub-value" id="gregorian-date">20 November 2024</div>
+                    </div>
+                </div>
+                
+                <!-- Iftar Timings -->
+                <div class="info-card">
+                    <div class="card-header">
+                        <i class="fas fa-moon"></i>
+                        <h3>Iftar Time</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="main-value" id="iftar-time">6:15 PM</div>
+                        <div class="sub-value">Jaigaon, West Bengal</div>
+                        <div class="countdown" id="time-remaining">Iftar in: 4h 22m</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+            
 
     <!-- About Section -->
     <section id="about" class="about">
@@ -150,6 +217,58 @@
                     <img src="images/masjid-exterior.jpg" alt="Town Jama Masjid Exterior" onerror="this.style.display='none'">
                 </div>
             </div>
+        </div>
+    </section>
+
+    Gallery Section
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Masjid Gallery</h2>
+            <p class="gallery-subtitle">Explore our beautiful masjid through photos</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/gallery1.jpg" alt="Masjid Exterior" onerror="this.src='https://via.placeholder.com/400x300/2c5e1a/ffffff?text=Masjid+Exterior'">
+                    <div class="gallery-overlay">
+                        <h4>Main Entrance</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery2.jpg" alt="Masjid Outside" onerror="this.src='https://via.placeholder.com/400x300/1a4721/ffffff?text=Prayer+Hall'">
+                    <div class="gallery-overlay">
+                        <h4>Masjid Exterior</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery3.jpg" alt="Entrance" onerror="this.src='https://via.placeholder.com/400x300/4a7c2a/ffffff?text=Minaret'">
+                    <div class="gallery-overlay">
+                        <h4>Entrance</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery4.jpg" alt="Waju Khaana" onerror="this.src='https://via.placeholder.com/400x300/2c5e1a/ffffff?text=Community+Event'">
+                    <div class="gallery-overlay">
+                        <h4>Waju Khaana</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery5.jpg" alt="Prayer Hall" onerror="this.src='https://via.placeholder.com/400x300/1a4721/ffffff?text=Islamic+Class'">
+                    <div class="gallery-overlay">
+                        <h4>Prayer hall</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery6.jpg" alt="Minaret" onerror="this.src='https://via.placeholder.com/400x300/4a7c2a/ffffff?text=Eid+Celebration'">
+                    <div class="gallery-overlay">
+                        <h4>Minaret</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- <div class="gallery-cta">
+                <p>Have photos of our masjid? Share them with us!</p>
+                <a href="#contact" class="cta-button">Share Your Photos</a>
+            </div> -->
         </div>
     </section>
 
@@ -260,18 +379,6 @@
                             <p class="teacher-experience">10+ years teaching experience</p>
                         </div>
                     </div>
-                    
-                    <div class="teacher-card">
-                        <div class="teacher-image">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <div class="teacher-info">
-                            <h4>Ustadha Fatima Khan</h4>
-                            <p class="teacher-qualification">Islamic Studies, Alimah Course</p>
-                            <p class="teacher-subject"><strong>Subjects:</strong> Islamic Studies, Seerah, Women's Program</p>
-                            <p class="teacher-experience">8+ years teaching experience</p>
-                        </div>
-                    </div>
                 </div>
             </div>
             
@@ -305,15 +412,20 @@
                 </div>
             </div>
             
-            <div class="registration-cta">
-                <div class="cta-content">
-                    <h3>Enroll Your Child Today</h3>
-                    <p>Give your child the gift of Islamic knowledge and spiritual growth</p>
-                    <button class="cta-button" onclick="openRegistrationForm()">Register Now</button>
-                </div>
+            <!-- <div class="contact-info-madrasa">
+                <div class="contact-content">
+                    <h3>For Admissions & Information</h3>
+                    <p>Contact our Madrasa administration for enrollment details and program information</p>
+                    <div class="contact-details">
+                        <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +91 8920556818</p>
+                        <p><i class="fas fa-clock"></i> <strong>Office Hours:</strong> 3:00 PM - 6:00 PM (Mon-Sat)</p>
+                        <p><i class="fas fa-map-marker-alt"></i> <strong>Visit:</strong> Town Jama Masjid, Rahiman Nagar</p>
+                    </div>
+                </div> -->
             </div>
         </div>
     </section>
+
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -338,31 +450,31 @@
                             <p><strong>Email:</strong><br>townjamamasjid@gmail.com</p>
                         </div>
                     </div>
-    
+
+                    <!-- Compact Map Version -->
                     <div class="map-container">
                         <h4><i class="fas fa-map"></i> Our Location</h4>
-                        <div class="map-placeholder">
-                            <i class="fas fa-map-marked-alt"></i>
-                            <p>📍 Interactive map will be displayed here</p>
-                            <p><small>You can add Google Maps embed code for exact location</small></p>
-                            <a href="https://maps.google.com/?q=Town+Jama+Masjid+Rahiman+Nagar+Jaigaon+West+Bengal" 
-                               target="_blank" class="cta-button" style="padding: 10px 20px; font-size: 0.9rem; margin-top: 10px;">
-                                <i class="fas fa-external-link-alt"></i> View on Google Maps
-                            </a>
-                        </div>
-                    </div>
-    
-                    <div class="contact-social">
-                        <h4>Follow Us</h4>
-                        <div class="social-links">
-                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <div class="real-map">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.789284893728!2d89.3756!3d26.8476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e3a22e623084a5%3A0x6e3ac5b79e7e2a4b!2sTown%20Jama%20Masjid!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                                width="100%" 
+                                height="200" 
+                                style="border:0; border-radius: 8px;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Town Jama Masjid Location Map">
+                            </iframe>
+                            <div class="map-actions">
+                                <a href="https://maps.google.com/?q=Town+Jama+Masjid+Rahiman+Nagar+Jaigaon+West+Bengal" 
+                                target="_blank" class="map-link">
+                                    <i class="fas fa-directions"></i> Get Directions
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="contact-column">
                     <div class="contact-form">
                         <h3>Send Us a Message</h3>
@@ -387,6 +499,10 @@
             </div>
         </div>
     </section>
+
+    <button id="backToTop" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+    </button>
 
     <footer>
         <div class="container">
@@ -414,21 +530,21 @@
                 <div class="footer-section">
                     <h3>Connect With Us</h3>
                     <div class="footer-social">
-                        <a href="#" class="social-link" aria-label="Facebook">
+                        <a href="https://www.facebook.com/profile.php?id=61581454354671" target="_blank" class="social-link" aria-label="Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="YouTube">
+                        <a href="https://www.youtube.com/@TownJamaMasjid" target="_blank" class="social-link" aria-label="YouTube">
                             <i class="fab fa-youtube"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="WhatsApp">
+                        <a href="https://wa.me/918920556818" target="_blank" class="social-link" aria-label="WhatsApp">
                             <i class="fab fa-whatsapp"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
+                        <a href="https://x.com/JamaMasjid1968" target="_blank" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
                         </a>
                     </div>
-                </div>
-            </div>
+                </div>       
+             </div>
             
             <div class="footer-bottom">
                 <p>&copy; 2024 Town Jama Masjid. All rights reserved.</p>
